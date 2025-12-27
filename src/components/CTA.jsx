@@ -19,22 +19,22 @@ const CTA = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight uppercase"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Ready to Start Your <span className="text-accent-clearBlue">Project</span>?
+            ¿Empezamos para <span className="text-accent-clearBlue">mover tu marca</span>?
           </h2>
           <p
             className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
           >
-            Let's collaborate to create something extraordinary. We're here to turn your vision into a reality that drives results.
+            Cuéntanos qué necesitas y te decimos por dónde empezar.
           </p>
           <div>
             <Button
               onClick={handleCTAClick}
               size="lg"
-              className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white font-bold px-10 py-7 text-xl rounded-full group"
+              className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white font-bold px-10 py-7 text-xl group"
             >
-              Contáctanos
+              ¿Empezamos?
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
             </Button>
           </div>

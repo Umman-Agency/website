@@ -30,16 +30,16 @@ const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-8 mb-16">
           <div className="w-full lg:w-1/2">
-            <div className="inline-block px-4 py-1.5 border border-white/20 rounded-full text-sm mb-4 uppercase">
-              Portfolio
+            <div className="inline-block px-4 py-1.5 border border-white/20 rounded-full text-sm mb-4 ">
+              Portafolio
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight uppercase">
-              Explore our portfolio of <span className="text-accent-clearBlue">creative solutions</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight ">
+              Trabajo que se nota, se mide y te devuelve tiempo
             </h2>
           </div>
           <div className="w-full lg:w-1/3">
             <p className="text-lg text-gray-400">
-              Explore our portfolio full of creative solutions, from branding and web design to marketing campaigns that drive results.
+              Mira lo que hemos hecho y lo que podemos hacer contigo. Proyectos de marca, web y campañas pensados para que se vea bien… y funcione mejor.
             </p>
           </div>
         </div>

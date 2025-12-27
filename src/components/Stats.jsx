@@ -39,29 +39,29 @@ const defaultStats = [
     {
       value: 150,
       suffix: '+',
-      label: 'Project success',
-      description: 'Delivered across 20+ countries—from startups to top corporations.',
+      label: 'Proyectos',
+      description: 'Entregados en +20 países, de marcas pequeñas a equipos grandes.',
     },
     {
       value: 100,
       suffix: '%',
-      label: 'Client efficiency',
-      description: 'Clients reporting enhanced efficiency with our custom strategies.',
+      label: 'Más eficiencia',
+      description: 'Procesos y contenido que ordenan el día a día y aceleran decisiones.',
     },
     {
       value: 300,
       suffix: '+',
-      label: 'AI innovation',
-      description: 'Hours spent crafting smart AI tools to optimize workflows across key industries.',
+      label: 'Piezas y campañas',
+      description: 'Estrategia, creatividad y ejecución para crecer con consistencia.',
     },
     {
       value: 75,
       suffix: '+',
-      label: 'Industry recognition',
-      description: 'Recognized for design, tech, and sustainability—past five years.',
+      label: 'Colaboraciones y menciones',
+      description: 'Confianza construida con resultados y recomendaciones reales.',
     },
 ];
-
+ 
 const Stats = ({ customStats }) => {
   const stats = customStats || defaultStats;
   const isProjectPage = !!customStats;
@@ -72,15 +72,15 @@ const Stats = ({ customStats }) => {
         {!isProjectPage && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase">
-                OUR <span className="text-accent-clearBlue">RESULTS</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                Marcas que pasaron al siguiente nivel
               </h2>
             </div>
-            <div className="flex items-end">
+            {/* <div className="flex items-end">
               <p className="text-lg text-gray-400 max-w-md">
                 Tangible results, not empty claims — we build efficient AI tools that scale, optimize, and save valuable hours.
               </p>
-            </div>
+            </div> */}
           </div>
         )}
         

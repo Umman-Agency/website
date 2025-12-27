@@ -35,18 +35,18 @@ const About = () => {
           duration: 0.8,
           ease: 'easeOut'
         }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white uppercase">
-              We're passionate about digital <span className="text-accent-clearBlue">excellence</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white ">
+              Nos mueve la<span className="text-accent-clearBlue">excelencia digital</span>
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Quality at the forefront</h3>
-                <p className="text-lg text-gray-400">Every project is crafted with attention to detail and a commitment to deliver exceptional results.</p>
+                <h3 className="text-2xl font-bold text-white mb-3">Calidad primero</h3>
+                <p className="text-lg text-gray-400">Cuidamos cada detalle para que el resultado se note desde el primer clic.</p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Focus on measurable impact</h3>
-                <p className="text-lg text-gray-400">Our focus is on delivering tangible, measurable results that help your business thrive.</p>
+                <h3 className="text-2xl font-bold text-white mb-3">Impacto que se mide</h3>
+                <p className="text-lg text-gray-400">Probamos, ajustamos y optimizamos para que tus objetivos se vean en números, no en promesas.</p>
               </div>
             </div>
           </motion.div>
@@ -84,18 +84,18 @@ const About = () => {
           duration: 0.8,
           ease: 'easeOut'
         }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white uppercase">
-              Your vision, our <span className="text-accent-clearBlue">expertise</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white ">
+              Tu idea. Nuestro propósito
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Strategy & Discovery</h3>
-                <p className="text-lg text-gray-400">We start by deeply understanding your brand, audience, and goals to build a comprehensive roadmap for success.</p>
+                <h3 className="text-2xl font-bold text-white mb-3">Estrategia y descubrimiento</h3>
+                <p className="text-lg text-gray-400">Nos metemos a fondo en tu marca, tu gente y tus objetivos para armar un plan claro y realista.</p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Creative Execution</h3>
-                <p className="text-lg text-gray-400">Our team brings ideas to life with precision and creativity, refining every detail through a collaborative feedback loop.</p>
+                <h3 className="text-2xl font-bold text-white mb-3">Ejecución creativa</h3>
+                <p className="text-lg text-gray-400">Convertimos la estrategia en piezas y acciones. Trabajamos contigo, afinamos y dejamos todo listo para salir.</p>
               </div>
             </div>
           </motion.div>

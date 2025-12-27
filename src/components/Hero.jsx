@@ -12,6 +12,16 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-4"
+        >
+          <span className="inline-block bg-accent-purple/20 text-accent-purple text-sm font-semibold px-4 py-2 rounded-full tracking-wide uppercase">
+            Ecosistema Tringo
+          </span>
+        </motion.div> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +49,7 @@ const Hero = () => {
           <Button
             asChild
             size="lg"
-            className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white text-lg font-semibold py-7 px-10 rounded-full shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
+            className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
           >
             <Link to="/contact">
               ¿Empezamos?<ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
