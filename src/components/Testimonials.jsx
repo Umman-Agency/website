@@ -125,7 +125,7 @@ const Testimonials = () => {
             <div
               key={testimonial.id}
               // Adjusting width to be responsive to the parent's padding
-              className="flex-shrink-0 w-[calc(100%-48px)] md:w-[calc(50%-16px)] snap-start"
+              className="shrink-0 w-[calc(100%-48px)] md:w-[calc(50%-16px)] snap-start"
             >
               <div className="bg-[#1E1E2A] p-8 rounded-2xl h-full flex flex-col border border-white/10">
                 <div className="flex items-center mb-6">

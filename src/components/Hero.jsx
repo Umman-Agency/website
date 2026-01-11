@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-black">
       <AnimatedHeroBackground />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* <motion.div

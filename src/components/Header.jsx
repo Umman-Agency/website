@@ -116,7 +116,7 @@ const Header = () => {
                   <X size={28} />
                 </button>
               </div>
-              <nav className="flex-grow flex flex-col justify-center items-center gap-8">
+              <nav className="grow flex flex-col justify-center items-center gap-8">
                 {navLinks.map((link, index) => (
                   <motion.a
                     key={link.name}

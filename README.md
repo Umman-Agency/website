@@ -1,3 +1,4 @@
+
 # Let's make this brand unique
 
 > Landing and sales, here we are focused on a very good first impression
@@ -8,7 +9,15 @@
 
 [Tailwind Documentation](https://tailwindcss.com/docs/installation/using-vite)
 
-[Update Tailwind]()
+[Update Tailwind](https://tailwindcss.com/docs/upgrade-guide#using-the-upgrade-tool)
+
+
+[tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
+
+### PostCSS
+
+[Workflow](https://postcss.org/docs/postcss-architecture)
+
 
 ### Dependecies that were deprecated
 

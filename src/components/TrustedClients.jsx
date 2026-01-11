@@ -40,7 +40,7 @@ const TrustedClients = () => {
         <div className="relative w-full h-16 flex items-center">
           <motion.div className="flex" variants={marqueeVariants} animate="animate">
             {marqueeLogos.map((logo, index) => (
-              <div key={index} className="flex-shrink-0 w-48 mx-12 flex justify-center items-center">
+              <div key={index} className="shrink-0 w-48 mx-12 flex justify-center items-center">
                 <img
                   className="h-10 w-auto object-contain"
                   alt={logo.name + ' logo'}

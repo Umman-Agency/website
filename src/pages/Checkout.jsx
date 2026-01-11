@@ -125,7 +125,7 @@ const Checkout = () => {
                         animate={{ opacity: 1, x: 0, transition: { delay: i * 0.05 + 0.3 } }}
                         className="flex items-center gap-3"
                       >
-                        <Check className="text-green-400 h-5 w-5 flex-shrink-0" />
+                        <Check className="text-green-400 h-5 w-5 shrink-0" />
                         <span>{feature}</span>
                       </motion.li>
                     ))}

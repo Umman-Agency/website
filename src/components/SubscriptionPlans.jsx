@@ -68,7 +68,7 @@ const SubscriptionPlans = () => {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <Check className="text-green-400 h-5 w-5 flex-shrink-0" />
+                    <Check className="text-green-400 h-5 w-5 shrink-0" />
                     <span className="text-gray-300">{feature}</span>
                   </li>
                 ))}
