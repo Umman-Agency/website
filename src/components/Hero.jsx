@@ -11,7 +11,7 @@ const Hero = () => {
       <AnimatedHeroBackground />
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
 
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto">
         {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,16 +29,16 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6"
         >
-          Haz que tu marca <br/> siga creciendo
+          Haz que tu marca <br/> <i><b>siga creciendo</b></i>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
+          className="text-lg sm:text-2xl text-gray-300 mb-10 mx-w-2xl mx-auto"
         >
-          Ordenamos tu mensaje y lo convertimos en estrategia y contenido que impacta.
+          Ordenamos tu mensaje de forma automatizada y lo convertimos en estrategia y contenido que impacta.
         </motion.p>
 
         <motion.div
