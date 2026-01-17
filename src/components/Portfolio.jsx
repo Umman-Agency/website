@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Tag } from './ui/tag';
 const projects = [{
   id: 1,
   slug: 'social-media-app',
@@ -30,9 +31,8 @@ const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-8 mb-16">
           <div className="w-full lg:w-1/2">
-            <div className="inline-block px-4 py-1.5 border border-white/20 rounded-full text-sm mb-4 ">
-              Portafolio
-            </div>
+            <Tag value="Portafolio"></Tag>
+            
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight ">
               Trabajo que se nota, se mide y te devuelve tiempo
             </h2>

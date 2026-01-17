@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { Tag } from './ui/tag';
 
 const AnimatedCounter = ({ to, suffix }) => {
     const ref = useRef(null);
@@ -69,6 +70,7 @@ const Stats = ({ customStats }) => {
   return (
     <section id="stats-section" className="py-24 bg-[#0C0D0D]">
       <div className="container mx-auto px-6">
+        <Tag value="Logros"></Tag>
         {!isProjectPage && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div>

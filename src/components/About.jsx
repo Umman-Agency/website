@@ -1,8 +1,11 @@
 import React from 'react';
+import { Tag } from './ui/tag';
 import { motion } from 'framer-motion';
+
 const About = () => {
   return <section id="about" className="py-24 bg-[#0C0D0D] overflow-hidden">
       <div className="container mx-auto px-6">
+      <Tag value="Logros"></Tag>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{
           opacity: 0,

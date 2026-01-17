@@ -64,9 +64,9 @@ const Hero = () => {
           className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <div className="flex -space-x-4">
-            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 1" src="https://images.unsplash.com/photo-1649767590910-367f54f3d0e3" />
-            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 2" src="https://images.unsplash.com/photo-1677696795873-ca21e7d76a51" />
-            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 3" src="https://images.unsplash.com/photo-1695654686808-8e90bd2c6923" />
+            <img className="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 1" src="https://images.unsplash.com/photo-1649767590910-367f54f3d0e3" />
+            <img className="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 2" src="https://images.unsplash.com/photo-1677696795873-ca21e7d76a51" />
+            <img className="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 3" src="https://images.unsplash.com/photo-1695654686808-8e90bd2c6923" />
           </div>
           <div className="h-10 w-px bg-gray-600 hidden sm:block"></div> {/* Separator */}
           <div className="flex items-center gap-2">

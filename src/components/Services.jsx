@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react'; // Changed import from ArrowRight, ArrowDownRight to Plus
+import { Tag } from './ui/tag';
 
 const services = [{
   title: 'Marketing Digital',
@@ -33,8 +34,12 @@ const Services = () => {
     <section id="services" className="py-24 bg-[#0C0D0D]">
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
+          {/* <div className="border px-4 py-1.5 inline-block rounded-full text-(--white-75) text-0.8 text-sm mb-4">
+            Servicios
+          </div> */}
+          <Tag value="Servicios"></Tag>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight text-white">
-            lo que <span className="text-accent-clearBlue">hacemos</span>
+            <i><b>Potenciamos</b></i> tu marca
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mt-4">Lo que necesitas para que tu marca se vea mejor, funcione mejor y llegue a más gente.</p>
           <div className="flex flex-wrap gap-3 mt-8">
