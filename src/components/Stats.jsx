@@ -72,19 +72,20 @@ const Stats = ({ customStats }) => {
       <div className="container mx-auto px-6">
         <Tag value="Logros"></Tag>
         {!isProjectPage && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 gap-8 mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                Marcas que pasaron al siguiente nivel
+              <h2 className="text-4xl md:text-5xl lg:text-4xl font-bold text-white">
+                Trabajo que se <i><b>nota</b></i>, se <i><b>mide</b></i> y <i><b>te devuelve tiempo</b></i>
               </h2>
             </div>
+            <p className="text-lg text-white-400">
+              Objetivos cumplidos y números que lo respaldan: proyectos entregados, crecimiento medible y clientes felices.
+            </p>
             {/* <div className="flex items-end">
-              <p className="text-lg text-gray-400 max-w-md">
-                Tangible results, not empty claims — we build efficient AI tools that scale, optimize, and save valuable hours.
-              </p>
             </div> */}
           </div>
         )}
+
         
         {isProjectPage && (
             <div className="text-center mb-16">
@@ -95,10 +96,10 @@ const Stats = ({ customStats }) => {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="bg-[#1E1E2A] p-8 rounded-2xl h-full"
+              className={`bg-${index} p-8 rounded-2xl h-full`}
             >
               <div className="text-5xl md:text-6xl font-bold text-white mb-6">
                 <AnimatedCounter to={stat.value} suffix={stat.suffix} />

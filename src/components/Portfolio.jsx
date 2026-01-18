@@ -34,7 +34,7 @@ const Portfolio = () => {
             <Tag value="Portafolio"></Tag>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight ">
-              Trabajo que se nota, se mide y te devuelve tiempo
+              Marcas que pasaron al <i><b>siguiente</b></i> nivel
             </h2>
           </div>
           <div className="w-full lg:w-1/3">

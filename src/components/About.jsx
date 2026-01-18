@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 const About = () => {
   return <section id="about" className="py-24 bg-[#0C0D0D] overflow-hidden">
       <div className="container mx-auto px-6">
-      <Tag value="Logros"></Tag>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{
           opacity: 0,
@@ -21,7 +20,7 @@ const About = () => {
           ease: 'easeOut'
         }}>
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img class="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/charlesdeluvio-lks7vei-eag-unsplash-7Or6F.jpg" />
+              <img className="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/charlesdeluvio-lks7vei-eag-unsplash-7Or6F.jpg" />
             </div>
           </motion.div>
 
@@ -38,8 +37,8 @@ const About = () => {
           duration: 0.8,
           ease: 'easeOut'
         }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white ">
-              Nos mueve la<span className="text-accent-clearBlue">excelencia digital</span>
+            <h2 className="text-3xl pb-6 md:text-4xl lg:text-5xl border-b border-white/10 font-bold mb-6 leading-tight text-white ">
+              Nos mueve la <br></br><i><b>excelencia digital</b></i>
             </h2>
 
             <div className="space-y-8">
@@ -70,7 +69,7 @@ const About = () => {
           ease: 'easeOut'
         }} className="lg:order-last">
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img class="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/michael-t-rxri-ho62y4-unsplash-2-tvxRc.jpg" />
+              <img className="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/michael-t-rxri-ho62y4-unsplash-2-tvxRc.jpg" />
             </div>
           </motion.div>
 
@@ -87,8 +86,8 @@ const About = () => {
           duration: 0.8,
           ease: 'easeOut'
         }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white ">
-              Tu idea. Nuestro propósito
+            <h2 className="text-3xl pb-6 border-b border-white/10 md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white ">
+              Tu idea, nuestro <i><b>propósito</b></i>
             </h2>
 
             <div className="space-y-8">

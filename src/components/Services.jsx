@@ -38,7 +38,7 @@ const Services = () => {
             Servicios
           </div> */}
           <Tag value="Servicios"></Tag>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight text-white">
             <i><b>Potenciamos</b></i> tu marca
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mt-4">Lo que necesitas para que tu marca se vea mejor, funcione mejor y llegue a más gente.</p>

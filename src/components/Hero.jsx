@@ -49,7 +49,7 @@ const Hero = () => {
           <Button
             asChild
             size="lg"
-            className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
+            className="from-primary-palpable hover:bg-accent-clearBlue/90 text-white text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
           >
             <Link to="/contact">
               ¿Empezamos?<ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
