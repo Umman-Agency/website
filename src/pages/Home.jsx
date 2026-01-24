@@ -3,7 +3,6 @@ import Testimonials from '../components/Testimonials';
 import SubscriptionPlans from '../components/SubscriptionPlans';
 import { Helmet } from 'react-helmet';
 import Hero from '../components/Hero';
-import TrustedClients from '../components/TrustedClients';
 import Services from '../components/Services';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
@@ -20,7 +19,6 @@ const Home = () => {
         <meta name="description" content="Award-winning marketing agency specializing in digital marketing, brand strategy, and creative solutions that drive results." />
       </Helmet>
       <Hero />
-      <SectionAnimator><TrustedClients /></SectionAnimator>
       <SectionAnimator><Services /></SectionAnimator>
       {/* <SubscriptionPlans /> */}
       <About />

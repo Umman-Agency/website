@@ -4,10 +4,12 @@ import { ArrowRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import AnimatedHeroBackground from './AnimatedHeroBackground';
 import { Link } from 'react-router-dom';
+import SectionAnimator from '../components/SectionAnimator';
+import TrustedClients from '../components/TrustedClients';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-black">
+    <section className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-black">
       <AnimatedHeroBackground />
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
 
@@ -49,7 +51,7 @@ const Hero = () => {
           <Button
             asChild
             size="lg"
-            className="from-primary-palpable hover:bg-accent-clearBlue/90 text-white text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
+            className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
           >
             <Link to="/contact">
               ¿Empezamos?<ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -83,6 +85,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
+      <SectionAnimator><TrustedClients /></SectionAnimator>
     </section>
   );
 };

@@ -32,7 +32,7 @@ const CTA = () => {
             <Button
               onClick={handleCTAClick}
               size="lg"
-              className="bg-accent-clearBlue hover:bg-accent-clearBlue/90 text-white font-bold px-10 py-7 text-xl group"
+              className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black font-bold px-10 py-7 text-xl group"
             >
               ¿Empezamos?
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1.5 transition-transform" />

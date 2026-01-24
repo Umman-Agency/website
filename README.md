@@ -11,8 +11,10 @@
 
 [Update Tailwind](https://tailwindcss.com/docs/upgrade-guide#using-the-upgrade-tool)
 
+About bg-color: `https://tailwindcss.com/docs/color#quick-reference`
 
 [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
+
 
 ### PostCSS
 
