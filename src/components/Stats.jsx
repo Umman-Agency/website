@@ -74,7 +74,7 @@ const Stats = ({ customStats }) => {
         {!isProjectPage && (
           <div className="grid grid-cols-1 gap-8 mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-5xl lg:text-4xl font-bold text-white">
                 Trabajo que se <i><b>nota</b></i>, se <i><b>mide</b></i> y <i><b>te devuelve tiempo</b></i>
               </h2>
             </div>
