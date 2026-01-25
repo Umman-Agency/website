@@ -125,7 +125,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white-500">
           <p>&copy; {new Date().getFullYear()} Umman Agencia. Todos los derechos reservados.</p>
         </div>
       </div>

@@ -56,7 +56,7 @@ const Services = () => {
             <div key={service.title} className="border-b border-gray-800">
               <div className="flex justify-between items-center cursor-pointer py-8 group" onClick={() => handleServiceClick(index)}>
                 <div className="flex items-center gap-4">
-                  <h3 className={`text-3xl md:text-5xl font-bold transition-colors duration-300 ${activeIndex === index ? 'text-white' : 'text-gray-600 group-hover:text-gray-400'}`}>
+                  <h3 className={`text-3xl  font-bold transition-colors duration-300 ${activeIndex === index ? 'text-white' : 'text-gray-600 group-hover:text-gray-400'}`}>
                     {service.title}
                   </h3>
                   {activeIndex === index && (
@@ -69,11 +69,10 @@ const Services = () => {
                 </div>
                 
                 <motion.div 
-                  className="text-accent-clearBlue" 
                   animate={{ rotate: activeIndex === index ? 45 : 0 }} // Rotate Plus for open state
                   transition={{ duration: 0.3 }}
                 >
-                  <Plus size={40} className={`${activeIndex === index ? 'text-accent-clearBlue' : 'text-gray-600 group-hover:text-gray-400'} transition-colors`} />
+                  <Plus size={40} className={`${activeIndex === index ? 'text-white' : 'text-primary-palpable group-hover:text-gray-400'} transition-colors`} />
                 </motion.div>
               </div>
               
