@@ -34,15 +34,15 @@ const TrustedClients = () => {
   };
 
   return (
-    <section className="py-20 bg-transparent border-t border-b border-[#1E1E2A] overflow-hidden">
+    <section className="w-full py-9 md:py-18 bg-transparent overflow-hidden border-y-1 border-solid border-light-border-line z-15">
       <div className="container mx-auto px-6 text-center">
         {/* <p className="text-lg text-gray-400 mb-12 uppercase">Trusted by 150+ Companies Worldwide</p> */}
-        <div className="relative w-full h-16 flex items-center">
+        <div className="relative w-full h-7 flex items-center">
           <motion.div className="flex" variants={marqueeVariants} animate="animate">
             {marqueeLogos.map((logo, index) => (
               <div key={index} className="shrink-0 w-48 mx-12 flex justify-center items-center">
                 <img
-                  className="h-10 w-auto object-contain"
+                  className="h-6 w-auto object-contain"
                   alt={logo.name + ' logo'}
                   src={logo.imageUrl}
                 />

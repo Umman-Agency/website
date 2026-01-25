@@ -7,19 +7,19 @@ const layers = [
   {
     initial: { x: '-5%', y: '-5%', scale: 1.1 },
     animate: { x: '5%', y: '5%' },
-    transition: { duration: 20, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
+    transition: { duration: 0, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
     opacity: 0.8,
   },
   {
     initial: { x: '5%', y: '5%', scale: 1.2 },
     animate: { x: '-5%', y: '-5%' },
-    transition: { duration: 25, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
+    transition: { duration: 0, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
     opacity: 0.6,
   },
   {
     initial: { x: '0%', y: '10%', scale: 1.05 },
     animate: { x: '0%', y: '-10%' },
-    transition: { duration: 30, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
+    transition: { duration: 0, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' },
     opacity: 1,
   },
 ];

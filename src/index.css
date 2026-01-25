@@ -65,6 +65,7 @@
 
 @theme {
     --color-primary-palpable:hsla(179, 100%, 50%, 1);
+    --color-light-border-line: hsla(0, 0%, 24%, 1);
 }
 
 @layer base {

@@ -9,7 +9,7 @@ import TrustedClients from '../components/TrustedClients';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-black">
+    <section className="relative h-screen pt-26 flex grow-1 flex-col items-center justify-between gap-5 text-center overflow-hidden bg-black">
       <AnimatedHeroBackground />
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
 
@@ -70,8 +70,8 @@ const Hero = () => {
             <img className="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 2" src="https://images.unsplash.com/photo-1677696795873-ca21e7d76a51" />
             <img className="w-12 h-12 rounded-full border-2 border-white object-cover" alt="Avatar 3" src="https://images.unsplash.com/photo-1695654686808-8e90bd2c6923" />
           </div>
-          <div className="h-10 w-px bg-gray-600 hidden sm:block"></div> {/* Separator */}
-          <div className="flex items-center gap-2">
+          <div className="h-10 w-px bg-white hidden sm:block"></div> {/* Separator */}
+          <div className="flex flex-col items-start gap-2">
             <div className="flex text-yellow-400">
               <Star fill="currentColor" strokeWidth={0} className="h-5 w-5" />
               <Star fill="currentColor" strokeWidth={0} className="h-5 w-5" />
@@ -79,13 +79,13 @@ const Hero = () => {
               <Star fill="currentColor" strokeWidth={0} className="h-5 w-5" />
               <Star fill="currentColor" strokeWidth={0} className="h-5 w-5" />
             </div>
-            <p className="text-gray-200 text-lg font-medium">
-              Confían en nosotros más de <span className="font-bold text-white">100+ marcas</span>
+            <p className="text-gray-200 font-medium">
+              Cada vez más marcas trabajan con nosotros
             </p>
           </div>
         </motion.div>
       </div>
-      <SectionAnimator><TrustedClients /></SectionAnimator>
+      <TrustedClients />
     </section>
   );
 };
