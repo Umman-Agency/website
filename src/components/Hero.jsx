@@ -4,8 +4,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import AnimatedHeroBackground from './AnimatedHeroBackground';
 import { Link } from 'react-router-dom';
-import SectionAnimator from '../components/SectionAnimator';
-import TrustedClients from '../components/TrustedClients';
+import TrustedClients from './TrustedClients';
 
 const Hero = () => {
   return (

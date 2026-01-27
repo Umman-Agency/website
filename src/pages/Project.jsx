@@ -3,8 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Stats from '../components/Stats.jsx';
-import SectionAnimator from '../components/SectionAnimator';
-import { Button } from '../components/ui/button';
+import SectionAnimator from '../components/SectionAnimator.jsx';
+import { Button } from '../components/ui/button.jsx';
 import { ArrowRight } from 'lucide-react';
 
 // Mock data for projects
