@@ -1,9 +1,16 @@
-
 # Let's make this brand unique
 
-> Landing and sales, here we are focused on a very good first impression
+First platform on getting marketing right!
 
-## Sources
+## Tutorials and Sources
+
+- [Vike](#vike)
+  - [Plus files](#plus-files)
+  - [Routing](#routing)
+  - [SSR](#ssr)
+  - [HTML Streaming](#html-streaming)
+
+## Tailwind
 
 [Tailwind width](https://tailwindcss.com/docs/width)
 
@@ -15,12 +22,46 @@ About bg-color: `https://tailwindcss.com/docs/color#quick-reference`
 
 [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
 
-
-### PostCSS
+## PostCSS
 
 [Workflow](https://postcss.org/docs/postcss-architecture)
 
-
-### Dependecies that were deprecated
+## Dependecies that were deprecated
 
 [Vite test](https://blog.jonrshar.pe/2023/Dec/17/js-tdd-vite.html)
+
+## Vike
+
+This app is ready to start. It's powered by [Vike](https://vike.dev) and [React](https://react.dev/learn).
+
+### Plus files
+
+[The + files are the interface](https://vike.dev/config) between Vike and your code.
+
+- [`+config.ts`](https://vike.dev/settings) — Settings (e.g. `<title>`)
+- [`+Page.tsx`](https://vike.dev/Page) — The `<Page>` component
+- [`+data.ts`](https://vike.dev/data) — Fetching data (for your `<Page>` component)
+- [`+Layout.tsx`](https://vike.dev/Layout) — The `<Layout>` component (wraps your `<Page>` components)
+- [`+Head.tsx`](https://vike.dev/Head) - Sets `<head>` tags
+- [`/pages/_error/+Page.tsx`](https://vike.dev/error-page) — The error page (rendered when an error occurs)
+- [`+onPageTransitionStart.ts`](https://vike.dev/onPageTransitionStart) and `+onPageTransitionEnd.ts` — For page transition animations
+
+### Routing
+
+[Vike's built-in router](https://vike.dev/routing) lets you choose between:
+
+- [Filesystem Routing](https://vike.dev/filesystem-routing) (the URL of a page is determined based on where its `+Page.jsx` file is located on the filesystem)
+- [Route Strings](https://vike.dev/route-string)
+- [Route Functions](https://vike.dev/route-function)
+
+### SSR
+
+SSR is enabled by default. You can [disable it](https://vike.dev/ssr) for all or specific pages.
+
+### HTML Streaming
+
+You can [enable/disable HTML streaming](https://vike.dev/stream) for all or specific pages.
+
+### Utils
+
+How to use navigation [`navigate`](https://vike.dev/navigate)

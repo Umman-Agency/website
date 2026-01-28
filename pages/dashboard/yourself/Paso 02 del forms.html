@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umman - Configuración de Marca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-umman-purple { background-color: #5522FF; }
+        .text-umman-purple { color: #5522FF; }
+        .border-umman-purple { border-color: #5522FF; }
+        .bg-umman-bg { background-color: #F8FAFC; }
+        .sidebar-dark { background-color: #111111; }
+    </style>
+</head>
+<body class="bg-umman-bg flex h-screen overflow-hidden">
+
+    <aside class="sidebar-dark w-64 flex flex-col text-gray-400 p-4 shrink-0">
+        <div class="mb-8 px-2 flex items-center gap-2">
+            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                <span class="text-black font-bold text-xs">um</span>
+            </div>
+            <span class="text-white font-bold text-xl tracking-tight">umman</span>
+        </div>
+
+        <nav class="flex-1 space-y-1">
+            <div class="flex items-center gap-3 px-3 py-2 text-sm">
+                <span>⊞</span> Dashboard <span class="ml-auto text-xs">↗</span>
+            </div>
+            <div class="mt-6 mb-2 px-3 text-[10px] uppercase tracking-widest text-gray-600 font-bold">Menu</div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>✎</span> Tu empresa
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm bg-gray-800 text-white rounded-lg cursor-pointer">
+                <span>🗂</span> Informacion General
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>♡</span> Psicologia de Marca
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>👤</span> Publico Objetivo
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>📈</span> Estrategia de Marca
+            </div>
+        </nav>
+
+        <div class="mt-auto border-t border-gray-800 pt-4 space-y-1">
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>❓</span> Soporte
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2 text-sm hover:text-white cursor-pointer">
+                <span>⚙</span> Configuración
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+        
+        <header class="h-16 flex items-center justify-end px-8">
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <p class="text-sm font-semibold text-gray-800">Jose Savala Torres</p>
+                    <p class="text-xs text-gray-400">jsavala@umman.es</p>
+                </div>
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <img src="https://ui-avatars.com/api/?name=Jose+Savala&background=0D8ABC&color=fff" class="rounded-full" alt="avatar">
+                </div>
+            </div>
+        </header>
+
+        <div class="flex justify-center py-6">
+            <div class="flex items-center w-2/3 max-w-4xl text-[11px] font-medium uppercase tracking-wider">
+                <div class="flex items-center text-umman-purple">
+                    <span class="w-4 h-4 border-2 border-umman-purple rounded-full mr-2 flex items-center justify-center">●</span>
+                    Info. General
+                </div>
+                <div class="flex-1 h-[1px] bg-gray-200 mx-4"></div>
+                <div class="flex items-center text-gray-400">
+                    <span class="w-4 h-4 border-2 border-gray-200 rounded-full mr-2"></span>
+                    Psicología de Marca
+                </div>
+                <div class="flex-1 h-[1px] bg-gray-200 mx-4"></div>
+                <div class="flex items-center text-gray-400">
+                    <span class="w-4 h-4 border-2 border-gray-200 rounded-full mr-2"></span>
+                    Publico Objetivo
+                </div>
+                <div class="flex-1 h-[1px] bg-gray-200 mx-4"></div>
+                <div class="flex items-center text-gray-400">
+                    <span class="w-4 h-4 border-2 border-gray-200 rounded-full mr-2"></span>
+                    Estrategia de Marca
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 flex flex-col items-center p-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 w-full max-w-2xl p-10">
+                
+                <div class="flex items-start gap-4 mb-8">
+                    <div class="w-10 h-10 bg-green-50 rounded flex items-center justify-center">
+                        <span class="text-green-500 text-xl">📋</span>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-800">Bloque 1: Información General</h2>
+                        <p class="text-sm text-gray-500 font-medium">Define la apariencia y nombre de tu marca</p>
+                    </div>
+                </div>
+
+                <hr class="mb-8">
+
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Logo de la Marca <span class="text-gray-400">ⓘ</span></label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg py-10 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50 transition">
+                        <span class="text-2xl mb-1">☁</span>
+                        <p class="text-umman-purple font-semibold text-sm">Sube tu logo aquí</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Número de contacto *</label>
+                        <div class="flex">
+                            <select class="border border-gray-300 rounded-l-lg p-2 bg-gray-50 text-sm outline-none">
+                                <option>+34</option>
+                            </select>
+                            <input type="text" placeholder="999 999 999" class="w-full border border-l-0 border-gray-300 rounded-r-lg p-2 text-sm outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Mail de contacto *</label>
+                        <input type="email" placeholder="ejemplo@correo.com" class="w-full border border-gray-300 rounded-lg p-2 text-sm outline-none">
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-sm font-bold text-gray-700 mb-3">Rubros / Categorías</label>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-umman-purple text-white px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer">Diseño</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Gastronomía</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Tecnología</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Salud</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Educación</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Finanzas</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Marketing</span>
+                        <span class="bg-gray-100 text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer border border-gray-200">Retail</span>
+                        <span class="bg-umman-purple text-white w-7 h-7 flex items-center justify-center rounded-full text-lg cursor-pointer">+</span>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <label class="block text-sm font-bold text-gray-700 mb-4">Estilo (Max. 2)</label>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-md transition">
+                            <span class="text-xl">⛶</span>
+                            <p class="text-[10px] font-bold text-gray-600">Minimalista</p>
+                        </div>
+                        <div class="bg-umman-purple border border-umman-purple rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer shadow-lg shadow-purple-200">
+                            <span class="text-xl text-white">♡</span>
+                            <p class="text-[10px] font-bold text-white">Vintage</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-md transition">
+                            <span class="text-xl">💼</span>
+                            <p class="text-[10px] font-bold text-gray-600">Corporativo</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-md transition">
+                            <span class="text-xl">📷</span>
+                            <p class="text-[10px] font-bold text-gray-600">Realista</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-md transition">
+                            <span class="text-xl">🖋</span>
+                            <p class="text-[10px] font-bold text-gray-600">Artístico</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-md transition">
+                            <span class="text-xl text-umman-purple">💧</span>
+                            <p class="text-[10px] font-bold text-gray-600">Alto contraste</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button class="bg-umman-purple text-white px-10 py-3 rounded-xl font-bold text-sm shadow-lg shadow-purple-200 hover:bg-opacity-90 transition">
+                        Continuar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

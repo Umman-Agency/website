@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umman - Configuración de Perfil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; overflow-x: hidden; }
+        
+        #sidebar { transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .sidebar-text { transition: opacity 0.2s; }
+        .collapsed .sidebar-text { display: none; opacity: 0; }
+        .collapsed .sidebar-header-text { display: none; }
+        .collapsed { width: 80px !important; }
+        
+        .sidebar-item-active { background-color: #2d2d2d; border-radius: 8px; color: white; }
+        .step-line { height: 2px; background-color: #e5e7eb; flex-grow: 1; margin: 0 10px; }
+
+        .hidden-section { display: none; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+  <!--[ Aside bar
+
+    <aside id="sidebar" class="w-64 bg-[#121212] text-gray-400 flex flex-col justify-between p-4 shrink-0 relative">
+        <div>
+            <div class="flex items-center justify-between p-2 mb-8">
+                <h1 class="text-white text-xl font-bold italic tracking-tighter sidebar-header-text">umman</h1>
+                <button onclick="toggleSidebar()" class="hover:text-white transition p-1">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center text-[12px] rotate-45"></i>
+                </button>
+            </div>
+
+            <nav class="space-y-1">
+                <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                    <i class="fa-solid fa-table-cells-large text-sm w-5 text-center"></i>
+                    <span class="text-sm font-medium sidebar-text">Dashboard</span>
+                </a>
+                <div class="mt-4 mb-2 px-3 text-[10px] uppercase tracking-widest text-gray-500 font-bold sidebar-text">Tu empresa</div>
+                <a href="#" class="flex items-center gap-3 p-3 sidebar-item-active">
+                    <i class="fa-solid fa-pen-to-square text-sm w-5 text-center"></i>
+                    <span class="text-sm sidebar-text">Tu empresa</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                    <i class="fa-solid fa-file-lines text-sm w-5 text-center"></i>
+                    <span class="text-sm sidebar-text">Información General</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                    <i class="fa-solid fa-heart text-sm w-5 text-center"></i>
+                    <span class="text-sm sidebar-text">Psicología de Marca</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                    <i class="fa-solid fa-user-group text-sm w-5 text-center"></i>
+                    <span class="text-sm sidebar-text">Público Objetivo</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                    <i class="fa-solid fa-bullseye text-sm w-5 text-center"></i>
+                    <span class="text-sm sidebar-text">Estrategia de Marca</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="space-y-1 border-t border-gray-800 pt-4">
+            <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                <i class="fa-regular fa-circle-question text-sm w-5 text-center"></i>
+                <span class="text-sm sidebar-text">Soporte</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:text-white transition">
+                <i class="fa-solid fa-gear text-sm w-5 text-center"></i>
+                <span class="text-sm sidebar-text">Configuración</span>
+            </a>
+        </div>
+    </aside>
+]-->
+
+    <div class="flex-1 flex flex-col min-w-0">
+
+    <!-- [Header]-->
+
+        <div class="flex-1 flex flex-col items-center px-8 mt-[100px] pb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800">¿Cuál es tu <span class="italic font-medium text-slate-700">perfil profesional?</span></h2>
+                <p class="text-slate-500 mt-4 text-lg font-light">Ayúdanos a personalizar tu solución y liberar tu agenda</p>
+            </div>
+
+            <div class="w-full max-w-xl space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide text-[11px]">Perfil</label>
+                    <div class="relative">
+                        <select id="perfilSelect" onchange="handlePerfilChange()" class="w-full appearance-none bg-white border border-gray-300 rounded-lg px-4 h-[40px] py-0 text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
+                            <option value="" disabled selected>Selecciona el tipo de perfil</option>
+                            <option value="freelancer">Freelancer</option>
+                            <option value="agencia">Agencia</option>
+                            <option value="empresa">Empresa y/o Negocio</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-chevron-down text-[#0d9488] text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="empresaFields" class="hidden-section space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide text-[11px]">Nombre de la Empresa y/o Negocio *</label>
+                        <input type="text" placeholder="Ingresa el nombre Legal" class="w-full bg-white border border-gray-300 rounded-lg px-4 h-[40px] text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+
+                    <div class="bg-[#EEF0FF] p-4 rounded-lg flex gap-3 border border-[#E0E4FF]">
+                        <i class="fa-solid fa-bullhorn text-[#5831fb] mt-1"></i>
+                        <p class="text-[13px] text-slate-600 leading-relaxed">
+                            Si seleccionaste <strong>Empresa</strong>, te pediremos detalles sobre tu equipo y estructura. Esto nos ayudará a poder organizar la mejor estrategia para tu negocio.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="continueBtnContainer" class="hidden-section flex justify-end pt-4">
+                    <button class="bg-[#5831fb] text-white px-10 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#4726d9] transition-colors">
+                        Continuar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function handlePerfilChange() {
+            const select = document.getElementById('perfilSelect');
+            const empresaFields = document.getElementById('empresaFields');
+            const continueBtn = document.getElementById('continueBtnContainer');
+            
+            // Mostrar el botón de continuar si hay algo seleccionado
+            if (select.value !== "") {
+                continueBtn.style.display = 'flex';
+            }
+
+            // Mostrar campos extra solo si es empresa
+            if (select.value === 'empresa') {
+                empresaFields.style.display = 'block';
+            } else {
+                empresaFields.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umman - Estrategia de Marca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .sidebar-item-active { background-color: rgba(255,255,255,0.1); border-radius: 8px; }
+    </style>
+</head>
+<body class="bg-gray-50 flex h-screen">
+
+    <aside class="w-64 bg-[#1a1a1a] text-gray-400 p-6 flex flex-col justify-between">
+        <div>
+            <div class="flex items-center mb-10">
+                <span class="text-white font-bold text-xl tracking-wider italic">umman</span>
+            </div>
+            
+            <nav class="space-y-4">
+                <div class="flex items-center space-x-3 text-sm">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Dashboard</span>
+                </div>
+                <hr class="border-gray-700">
+                <div class="space-y-6 pt-4">
+                    <div class="flex items-center space-x-3 text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Tu empresa</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-sm">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Información General</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-sm">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Psicología de Marca</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-sm">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Público Objetivo</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-white sidebar-item-active p-2 -ml-2">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Estrategia de Marca</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="space-y-4 text-sm">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Soporte</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configuración</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto">
+        <header class="bg-white p-4 flex justify-end items-center border-b">
+            <div class="flex items-center space-x-3">
+                <div class="text-right">
+                    <p class="text-xs font-bold text-gray-800">Jose Zavala Torres</p>
+                    <p class="text-[10px] text-gray-400">jzavala@umman.es</p>
+                </div>
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">JZ</div>
+            </div>
+        </header>
+
+        <div class="max-w-4xl mx-auto py-10 px-6">
+            
+            <div class="flex items-center justify-center mb-12 space-x-4">
+                <div class="flex items-center text-sm text-gray-400"><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Personal info</div>
+                <div class="w-12 h-px bg-gray-300"></div>
+                <div class="flex items-center text-sm text-gray-400"><i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Psicología de Marca</div>
+                <div class="w-12 h-px bg-gray-300"></div>
+                <div class="flex items-center text-sm text-blue-600 font-medium"><i class="fa-solid fa-circle-dot mr-2"></i> Público objetivo</div>
+                <div class="w-12 h-px bg-gray-300"></div>
+                <div class="flex items-center text-sm text-gray-300"><i class="fa-regular fa-circle mr-2"></i> Estrategia de Marca info</div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                <div class="flex items-start space-x-4 mb-8">
+                    <div class="bg-emerald-50 p-3 rounded-lg text-emerald-600">
+                        <i class="fa-solid fa-tv text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-gray-800">Bloque 4: Estrategia de marca</h2>
+                        <p class="text-gray-500 text-sm">Define dónde y cómo comunicarás</p>
+                    </div>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Sitio web</label>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="www.miempresa.com" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                                <button class="p-2 text-indigo-500 border border-indigo-200 rounded-lg hover:bg-indigo-50"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Facebook</label>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="www.facebook.com/miempresa" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                                <button class="p-2 text-indigo-500 border border-indigo-200 rounded-lg hover:bg-indigo-50"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Instagram</label>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="www.instagram.com/miempresa" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                                <button class="p-2 text-indigo-500 border border-indigo-200 rounded-lg hover:bg-indigo-50"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tiktok</label>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="www.tiktok.com/@miempresa" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                                <button class="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 px-3"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <label class="block text-sm font-bold text-gray-700 mb-4">Plataformas de Publicación *</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <span class="text-sm text-gray-600">Generar confianza</span>
+                            </label>
+                            <label class="flex items-center border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <span class="text-sm text-gray-600">Transmitir cercanía</span>
+                            </label>
+                            <label class="flex items-center border border-gray-200 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <span class="text-sm text-gray-600">Educar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Llamados a la acción *</label>
+                        <textarea rows="4" placeholder="Ej: Compra aquí, Cotiza aquí, etc" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div class="bg-indigo-50 p-4 rounded-lg flex space-x-3">
+                        <i class="fa-solid fa-bullhorn text-indigo-400 mt-1"></i>
+                        <p class="text-xs text-indigo-600 leading-relaxed">
+                            Tip: Sé específico. Ej: "Compra aquí" esto es crucial para poder generar alguna interacción.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="flex items-center text-sm font-bold text-gray-700">Sube tus imágenes <i class="fa-solid fa-circle-info ml-2 text-emerald-500"></i></label>
+                        <div class="border-2 border-dashed border-gray-200 rounded-xl py-10 flex flex-col items-center justify-center space-y-2 hover:border-indigo-300 transition cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-up text-gray-400 text-2xl"></i>
+                            <span class="text-indigo-600 font-semibold text-sm">Subir imagenes</span>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg flex space-x-3">
+                            <i class="fa-solid fa-bullhorn text-indigo-400 mt-1"></i>
+                            <p class="text-xs text-indigo-600 leading-relaxed">
+                                Recuerda subir todas las imágenes que tengas a tu alcance para poder generar todo el contenido posible y de mejor calidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between pt-6">
+                        <button type="button" class="px-8 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition">Atrás</button>
+                        <button type="submit" class="px-10 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Continuar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
