@@ -26,6 +26,12 @@ About bg-color: `https://tailwindcss.com/docs/color#quick-reference`
 
 [Workflow](https://postcss.org/docs/postcss-architecture)
 
+
+## Class Variance Authority
+
+How to make variants, full example: `https://cva.style/docs/getting-started/variants`
+
+
 ## Dependecies that were deprecated
 
 [Vite test](https://blog.jonrshar.pe/2023/Dec/17/js-tdd-vite.html)
