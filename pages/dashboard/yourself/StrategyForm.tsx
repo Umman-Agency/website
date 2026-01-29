@@ -1,4 +1,18 @@
-const StrategyForm = () => {
+import genericHandle from "./genericHandle";
+import { DataCapture } from "../../types";
+
+const StrategyForm = ({ onSubmit }: { onSubmit: DataCapture }) => {
+  function filter(elements: HTMLFormControlsCollection) {
+    console.log(elements);
+
+    return { 
+      ok: true,
+      data: {
+        ...elements
+      }
+    }
+  }
+
   return <>
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
                 <div className="flex items-start space-x-4 mb-8">
@@ -11,7 +25,7 @@ const StrategyForm = () => {
                     </div>
                 </div>
 
-                <form className="space-y-6">
+                <form onSubmit={genericHandle(filter, onSubmit)} className="space-y-6">
                     <div className="space-y-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">Sitio web</label>

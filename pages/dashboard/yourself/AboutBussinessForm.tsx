@@ -37,7 +37,7 @@ const AboutBussinessForm = () => {
       </div>
 
       <div id="continueBtnContainer" className="hidden-section flex justify-end pt-4">
-        <button className="bg-[#5831fb] text-white px-10 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#4726d9] transition-colors">
+        <button type="submit" className="bg-[#5831fb] text-white px-10 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#4726d9] transition-colors">
           Continuar
         </button>
       </div>

@@ -1,4 +1,19 @@
-const TargetPublicForm = () => {
+import genericHandle from "./genericHandle";
+import { DataCapture } from "../../types";
+
+const TargetPublicForm = ({ onSubmit }: { onSubmit: DataCapture }) => {
+
+  function filter(elements: HTMLFormControlsCollection) {
+    console.log(elements);
+
+    return { 
+      ok: true,
+      data: {
+        ...elements
+      }
+    }
+  }
+
   return <>
             <div className="max-w-2xl w-full bg-white rounded-xl border border-gray-100 shadow-sm p-8 h-fit">
                 
@@ -12,7 +27,7 @@ const TargetPublicForm = () => {
                     </div>
                 </div>
 
-                <form className="space-y-6">
+                <form onSubmit={genericHandle(filter, onSubmit)} className="space-y-6">
                     <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">Rango de edad *</label>
                         <select className="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 text-gray-400 text-sm focus:ring-purple-500 focus:border-purple-500 outline-none">
@@ -53,7 +68,7 @@ const TargetPublicForm = () => {
 
                     <div className="flex justify-between pt-6">
                         <button type="button" className="px-8 py-2 border border-purple-600 text-purple-600 font-medium rounded-lg text-sm hover:bg-purple-50 transition-colors">Atrás</button>
-                        <button type="button" className="px-8 py-2 bg-[#4c1dff] text-white font-medium rounded-lg text-sm hover:bg-blue-700 transition-colors shadow-md">Continuar</button>
+                        <button type="submit" className="px-8 py-2 bg-[#4c1dff] text-white font-medium rounded-lg text-sm hover:bg-blue-700 transition-colors shadow-md">Continuar</button>
                     </div>
                 </form>
 

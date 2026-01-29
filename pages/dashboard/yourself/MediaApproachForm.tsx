@@ -1,5 +1,18 @@
+import genericHandle from "./genericHandle";
+import { DataCapture } from "../../types";
 
-const MediaApproachForm = () => {
+const MediaApproachForm = ({ onSubmit }: { onSubmit: DataCapture }) => {
+
+  function filter(elements: HTMLFormControlsCollection) {
+    console.log(elements);
+
+    return { 
+      ok: true,
+      data: {
+        ...elements
+      }
+    }
+  }
 
   return <>
             <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-10">
@@ -13,7 +26,7 @@ const MediaApproachForm = () => {
                     </div>
                 </div>
 
-                <form className="space-y-10">
+                <form onSubmit={genericHandle(filter, onSubmit)} className="space-y-10">
                     <div className="space-y-6">
                         <label className="text-sm font-bold text-gray-800">Logotipo de la Marca *</label>
                         
@@ -22,7 +35,7 @@ const MediaApproachForm = () => {
                                 <span>Formal</span>
                                 <span>Informal</span>
                             </div>
-                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"/>
                         </div>
 
                         <div className="space-y-2">
@@ -30,7 +43,7 @@ const MediaApproachForm = () => {
                                 <span>Serio</span>
                                 <span>Divertido</span>
                             </div>
-                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"/>
                         </div>
 
                         <div className="space-y-2">
@@ -38,11 +51,11 @@ const MediaApproachForm = () => {
                                 <span>Lujoso</span>
                                 <span>Accesible</span>
                             </div>
-                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <input type="range" className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"/>
                         </div>
                     </div>
 
-                    <hr className="border-gray-100">
+                    <hr className="border-gray-100"/>
 
                     <div className="space-y-6">
                         <div>
@@ -79,3 +92,5 @@ const MediaApproachForm = () => {
             </div>
   </>
 }
+
+export default MediaApproachForm;
