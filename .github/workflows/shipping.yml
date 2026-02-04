@@ -1,0 +1,135 @@
+name: shipping
+on:
+  push:
+    branches:
+      - feat/ssr
+jobs:
+  deploy:
+    name: Copy and Install to Hostinger
+    runs-on: ubuntu-latest
+    steps:
+       - name: Setup PHP
+         uses: shivammathur/setup-php@v2
+         with:
+          php-version: '{{PHP_VERSION}}'
+          extensions: mbstring, xml, bcmath, pdo_mysql
+       - name: Download Built Assets
+         uses: actions/download-artifact@v4
+         with:
+          name: build-assets
+          path: public/build/
+         continue-on-error: true
+
+       - name: Setup Node.js (for asset building)
+         if: hashFiles('package.json') != ''
+         uses: actions/setup-node@v4
+         with:
+          node-version: '20'
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
+
+       - name: Build Frontend Assets (if needed)
+         continue-on-error: true
+         if: hashFiles('package.json') != ''
+         run: |
+          echo "📦 Installing NPM dependencies..."
+          if [ -f package-lock.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --prefer-offline --no-audit
+          else
+            echo "ℹ️ No package-lock.json found, using npm install"
+            npm install --prefer-offline --no-audit
+          fi
+          
+          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
+            echo "🔨 Building assets for production..."
+            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
+            echo "ℹ️ Note: Built assets should be committed to your repository for deployment"
+            echo "   (NPM may not be available on the remote server)"
+          else
+            echo "ℹ️ No build script found in package.json"
+          fi
+
+       - name: Install SSH key
+         run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+       - name: Copy Build Files to Target Server
+         continue-on-error: true
+         run: |
+          if [ -d "${{ github.workspace }}/public/build" ]; then
+            rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/${{ secrets.WEBSITE_FOLDER }}/public/build
+          else
+            echo "ℹ️ No build directory found, skipping asset copy"
+          fi
+
+       - name: Deploy to Hostinger Server
+         uses: appleboy/ssh-action@master
+         with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            
+            echo "🚀 Starting deployment..."
+            
+            cd domains/${{ secrets.WEBSITE_FOLDER }}
+            
+            # Ensure we're on the correct branch
+            git fetch origin
+            git checkout {{BRANCH}}
+            git reset --hard origin/{{BRANCH}}
+            
+            echo "📦 Installing Composer dependencies..."
+            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+            
+            # Note: Frontend assets should already be built and committed
+            # If you need to build on server, ensure npm/node is available
+            # and uncomment the following lines:
+            # if [ -f package.json ]; then
+            #   npm ci --production && npm run build || npm run prod
+            # fi
+            
+            echo "🔧 Running Laravel setup commands..."
+            
+            # Run migrations
+            php artisan migrate --force
+            
+            # Clear and cache configuration
+            php artisan config:clear
+            php artisan config:cache
+            
+            # Clear and cache routes
+            php artisan route:clear
+            php artisan route:cache
+            
+            # Clear and cache views
+            php artisan view:clear
+            php artisan view:cache
+            
+            # Optimize application
+            php artisan optimize:clear
+            php artisan optimize
+            
+            # Clear and cache events (if available)
+            php artisan event:clear || true
+            php artisan event:cache || true
+            
+            # Restart queue workers (if using queues)
+            php artisan queue:restart || true
+            
+            # Restart Horizon (if using Laravel Horizon)
+            php artisan horizon:terminate || true
+            
+            # Clear application cache
+            php artisan cache:clear
+            
+            # Clear OPcache (if available)
+            php artisan opcache:clear || true
+            
+            echo "✅ Deployment completed successfully!"
+
+      
