@@ -11,8 +11,9 @@ jobs:
        - name: Setup PHP
          uses: shivammathur/setup-php@v2
          with:
-          php-version: '{{PHP_VERSION}}'
+          php-version: '8.4.14'
           extensions: mbstring, xml, bcmath, pdo_mysql
+
        - name: Download Built Assets
          uses: actions/download-artifact@v4
          with:
@@ -47,13 +48,6 @@ jobs:
           else
             echo "ℹ️ No build script found in package.json"
           fi
-
-       - name: Install SSH key
-         run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
        - name: Copy Build Files to Target Server
          continue-on-error: true
