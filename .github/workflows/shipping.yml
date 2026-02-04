@@ -2,7 +2,7 @@ name: shipping
 on:
   push:
     branches:
-      - feat/ssr
+      - feat/php
 jobs:
   deploy:
     name: Copy and Install to Hostinger
