@@ -1,8 +1,9 @@
-name: shipping
+name: Shipping
+
 on:
   push:
-    branches:
-      - feat/php
+    branches: [ {{vars.BRANCH}} ]
+
 jobs:
   deploy:
     name: Copy and Install to Hostinger
@@ -57,6 +58,13 @@ jobs:
           else
             echo "ℹ️ No build directory found, skipping asset copy"
           fi
+        
+       - name: Install SSH key
+         run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PR_KEY }}" > ~/.ssh/"${{ env.SSH_GEN_NAME }}"
+          chmod 600 ~/.ssh/"${{ env.SSH_GEN_NAME }}"
+          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
        - name: Deploy to Hostinger Server
          uses: appleboy/ssh-action@master
@@ -64,7 +72,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ~/.ssh/"${{ secrets.SSH_KEY }}""
           script: |
             set -e
             
@@ -74,8 +82,8 @@ jobs:
             
             # Ensure we're on the correct branch
             git fetch origin
-            git checkout {{BRANCH}}
-            git reset --hard origin/{{BRANCH}}
+            git checkout {{vars.BRANCH}}
+            git reset --hard origin/{{vars.BRANCH}}
             
             echo "📦 Installing Composer dependencies..."
             composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
