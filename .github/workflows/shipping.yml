@@ -28,7 +28,6 @@ jobs:
           php-version: $PHP_VERSION
           extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
           # github-token: ${{ secrets.EXTENDED_TOKEN }}
-          coverage: none
 
        - name: Copy .env
          run: |
