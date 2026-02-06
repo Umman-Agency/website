@@ -27,7 +27,7 @@ jobs:
          with:
           php-version: $PHP_VERSION
           extensions: mbstring, xml, bcmath, pdo_mysql
-          github-token: ${{ secrets.EXTENDED_TOKEN }}
+          # github-token: ${{ secrets.EXTENDED_TOKEN }}
           coverage: none
 
        - name: Copy .env
@@ -114,7 +114,7 @@ jobs:
          with:
           php-version: $PHP_VERSION
           extensions: mbstring, xml, bcmath, pdo_mysql
-          github-token: ${{ secrets.EXTENDED_TOKEN }}
+          # github-token: ${{ secrets.EXTENDED_TOKEN }}
 
        - name: Download Built Assets
          uses: actions/download-artifact@v4
