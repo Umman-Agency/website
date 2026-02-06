@@ -14,9 +14,12 @@ jobs:
   build:
     name: Build Frontend
     runs-on: ubuntu-latest
-    continue-on-error: true
+    continue-on-error: false
 
     steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
+
        - name: Setup PHP
          uses: shivammathur/setup-php@v2
          env:
@@ -91,7 +94,6 @@ jobs:
           if-no-files-found: ignore
           retention-days: 1
 
-
   deploy:
     name: Copy and Install to Hostinger
     needs: build
@@ -124,8 +126,10 @@ jobs:
        - name: Setup Node.js (for asset building)
          if: hashFiles('package.json') != ''
          uses: actions/setup-node@v4
+         env:
+          NODE_VERSION: ${{ vars.NODE_VERSION }}
          with:
-          node-version: '20'
+          node-version: $NODE_VERSION
           cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
 
        - name: Build Frontend Assets (if needed)
@@ -206,6 +210,7 @@ jobs:
             
             # Clear and cache routes
             php artisan route:clear
+
             php artisan route:cache
             
             # Clear and cache views
