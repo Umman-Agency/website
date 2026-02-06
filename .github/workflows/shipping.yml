@@ -1,18 +1,113 @@
 name: Shipping
 
+env:
+  BRANCH: ${{ vars.BRANCH }}
+
 on:
   push:
-    branches: [ {{vars.BRANCH}} ]
+    branches:
+      - $BRANCH
 
 jobs:
-  deploy:
-    name: Copy and Install to Hostinger
+
+  build:
+    name: Build Frontend
     runs-on: ubuntu-latest
+    continue-on-error: true
+
     steps:
        - name: Setup PHP
          uses: shivammathur/setup-php@v2
+         env:
+          PHP_VERSION: ${{ vars.PHP_VERSION }}
          with:
-          php-version: '8.4.14'
+          php-version: $PHP_VERSION
+          extensions: mbstring, xml, bcmath, pdo_mysql
+          coverage: none
+
+       - name: Copy .env
+         run: |
+          if [ -f .env.example ]; then
+            cp .env.example .env
+          else
+            echo "⚠️ .env.example not found, creating minimal .env"
+            echo "APP_ENV=testing" > .env
+            echo "APP_KEY=" >> .env
+          fi
+
+       - name: Install Composer Dependencies
+         run: composer install --prefer-dist --no-interaction --no-progress
+
+       - name: Generate Application Key
+         run: php artisan key:generate --ansi
+
+       - name: Check for package.json
+         id: check_package
+         run: |
+          if [ -f package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+       - name: Setup Node.js
+         if: steps.check_package.outputs.exists == 'true'
+         uses: actions/setup-node@v4
+         env:
+          NODE_VERSION: ${{ vars.NODE_VERSION }}
+         with:
+          node-version: $NODE_VERSION
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
+
+       - name: Install NPM Dependencies
+         if: steps.check_package.outputs.exists == 'true'
+         continue-on-error: true
+         run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            echo "ℹ️ No package-lock.json found, using npm install"
+            npm install
+          fi
+
+       - name: Build Assets
+         if: steps.check_package.outputs.exists == 'true'
+         continue-on-error: true
+         run: |
+          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
+            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
+          else
+            echo "⚠️ No build script found in package.json"
+          fi
+
+       - name: Upload Built Assets
+         if: steps.check_package.outputs.exists == 'true'
+         uses: actions/upload-artifact@v4
+         with:
+          name: build-assets
+          path: public/build/
+          if-no-files-found: ignore
+          retention-days: 1
+
+
+  deploy:
+    name: Copy and Install to Hostinger
+    env:
+      SSH_FILE_NAME: ${{ secrets.SSH_FILE_NAME }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Setup PHP
+         uses: shivammathur/setup-php@v2
+         env:
+          PHP_VERSION: ${{ vars.PHP_VERSION }}
+         with:
+          php-version: $PHP_VERSION
           extensions: mbstring, xml, bcmath, pdo_mysql
 
        - name: Download Built Assets
@@ -54,36 +149,37 @@ jobs:
          continue-on-error: true
          run: |
           if [ -d "${{ github.workspace }}/public/build" ]; then
-            rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/${{ secrets.WEBSITE_FOLDER }}/public/build
+            rsync -r -e "ssh -p $SSH_PORT" ${{ github.workspace }}/public/build/ $SSH_USERNAME@$SSH_HOST:~/domains/$WEBSITE_FOLDER/public/build
           else
             echo "ℹ️ No build directory found, skipping asset copy"
           fi
         
        - name: Install SSH key
+
          run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PR_KEY }}" > ~/.ssh/"${{ env.SSH_GEN_NAME }}"
-          chmod 600 ~/.ssh/"${{ env.SSH_GEN_NAME }}"
-          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          echo $SSH_PRIVATE_KEY > ~/.ssh/$SSH_FILE_NAME
+          chmod 600 ~/.ssh/$SSH_FILE_NAME
+          ssh-keyscan -t eds25519 -p $SSH_PORT $SSH_HOST >> ~/.ssh/known_hosts
 
        - name: Deploy to Hostinger Server
          uses: appleboy/ssh-action@master
          with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ~/.ssh/"${{ secrets.SSH_KEY }}""
+          host: $SSH_HOST
+          username: $SSH_USERNAME
+          port: $SSH_PORT
+          key: ~/.ssh/$SSH_FILE_NAME
           script: |
             set -e
             
             echo "🚀 Starting deployment..."
             
-            cd domains/${{ secrets.WEBSITE_FOLDER }}
+            cd domains/$WEBSITE_FOLDER
             
             # Ensure we're on the correct branch
             git fetch origin
-            git checkout {{vars.BRANCH}}
-            git reset --hard origin/{{vars.BRANCH}}
+            git checkout $BRANCH
+            git reset --hard origin/$BRANCH
             
             echo "📦 Installing Composer dependencies..."
             composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
