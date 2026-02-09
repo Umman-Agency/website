@@ -20,30 +20,30 @@ jobs:
        - name: Checkout code
          uses: actions/checkout@v4
 
-       - name: Setup PHP
-         uses: shivammathur/setup-php@v2
-         env:
-          PHP_VERSION: ${{ vars.PHP_VERSION }}
-         with:
-          php-version: $PHP_VERSION
-          extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
-          # github-token: ${{ secrets.EXTENDED_TOKEN }}
+      #  - name: Setup PHP
+      #    uses: shivammathur/setup-php@v2
+      #    env:
+      #     PHP_VERSION: ${{ vars.PHP_VERSION }}
+      #    with:
+      #     php-version: $PHP_VERSION
+      #     extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
+      #     # github-token: ${{ secrets.EXTENDED_TOKEN }}
 
-       - name: Copy .env
-         run: |
-          if [ -f .env.example ]; then
-            cp .env.example .env
-          else
-            echo "⚠️ .env.example not found, creating minimal .env"
-            echo "APP_ENV=testing" > .env
-            echo "APP_KEY=" >> .env
-          fi
+      #  - name: Copy .env
+      #    run: |
+      #     if [ -f .env.example ]; then
+      #       cp .env.example .env
+      #     else
+      #       echo "⚠️ .env.example not found, creating minimal .env"
+      #       echo "APP_ENV=testing" > .env
+      #       echo "APP_KEY=" >> .env
+      #     fi
 
-       - name: Install Composer Dependencies
-         run: composer install --prefer-dist --no-interaction --no-progress
+      #  - name: Install Composer Dependencies
+      #    run: composer install --prefer-dist --no-interaction --no-progress
 
-       - name: Generate Application Key
-         run: php artisan key:generate --ansi
+      #  - name: Generate Application Key
+      #    run: php artisan key:generate --ansi
 
        - name: Check for package.json
          id: check_package
@@ -106,14 +106,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-       - name: Setup PHP
-         uses: shivammathur/setup-php@v2
-         env:
-          PHP_VERSION: ${{ vars.PHP_VERSION }}
-         with:
-          php-version: $PHP_VERSION
-          extensions: mbstring, xml, bcmath, pdo_mysql
-          # github-token: ${{ secrets.EXTENDED_TOKEN }}
+      #  - name: Setup PHP
+      #    uses: shivammathur/setup-php@v2
+      #    env:
+      #     PHP_VERSION: ${{ vars.PHP_VERSION }}
+      #    with:
+      #     php-version: $PHP_VERSION
+      #     extensions: mbstring, xml, bcmath, pdo_mysql
+      #     # github-token: ${{ secrets.EXTENDED_TOKEN }}
 
        - name: Download Built Assets
          uses: actions/download-artifact@v4
@@ -201,40 +201,40 @@ jobs:
             echo "🔧 Running Laravel setup commands..."
             
             # Run migrations
-            php artisan migrate --force
+            php8 artisan migrate --force
             
             # Clear and cache configuration
-            php artisan config:clear
-            php artisan config:cache
+            php8 artisan config:clear
+            php8 artisan config:cache
             
             # Clear and cache routes
-            php artisan route:clear
+            php8 artisan route:clear
 
-            php artisan route:cache
+            php8 artisan route:cache
             
             # Clear and cache views
-            php artisan view:clear
-            php artisan view:cache
+            php8 artisan view:clear
+            php8 artisan view:cache
             
             # Optimize application
-            php artisan optimize:clear
-            php artisan optimize
+            php8 artisan optimize:clear
+            php8 artisan optimize
             
             # Clear and cache events (if available)
-            php artisan event:clear || true
-            php artisan event:cache || true
+            php8 artisan event:clear || true
+            php8 artisan event:cache || true
             
             # Restart queue workers (if using queues)
-            php artisan queue:restart || true
+            php8 artisan queue:restart || true
             
             # Restart Horizon (if using Laravel Horizon)
-            php artisan horizon:terminate || true
+            php8 artisan horizon:terminate || true
             
             # Clear application cache
-            php artisan cache:clear
+            php8 artisan cache:clear
             
             # Clear OPcache (if available)
-            php artisan opcache:clear || true
+            php8 artisan opcache:clear || true
             
             echo "✅ Deployment completed successfully!"
       
