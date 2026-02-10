@@ -1,4 +1,5 @@
 
+import BasicLayout from "@/layout/basic";
 import AsideBar from "@/lib/dashboard/AsideBar";
 import Header from "@/lib/dashboard/Header";
 import "@/lib/dashboard/dashboard.css";
@@ -13,6 +14,6 @@ function Dashboard({children}){
   </main>
 }
 
-// Dashboard.layout = page => <Layout children={page} />;
+Dashboard.layout = page => <BasicLayout children={page} />;
 
 export default Dashboard;

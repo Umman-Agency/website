@@ -1,14 +1,14 @@
-
 import About from '@/components/About';
-import Stats from '@/components/Stats';
-import Portfolio from '@/components/Portfolio';
 import CTA from '@/components/CTA';
-import Services from '@/components/Services';
-import SectionAnimator from '@/components/SectionAnimator';
 import Header from "@/components/Header";
 import Hero from '@/components/Hero';
+import Portfolio from '@/components/Portfolio';
+import SectionAnimator from '@/components/SectionAnimator';
+import Services from '@/components/Services';
+import Stats from '@/components/Stats';
+import BasicLayout from "@/layout/basic";
 
-export default function Welcome() {
+function Welcome() {
   return (
     <>
       <Header />
@@ -21,3 +21,7 @@ export default function Welcome() {
     </>
   );
 }
+
+Welcome.layout = page => <BasicLayout children={page} />;
+
+export default Welcome;

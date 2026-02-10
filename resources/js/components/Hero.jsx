@@ -48,11 +48,11 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-300 hover:scale-105 group"
+            className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-100 hover:scale-105 group"
           >
-            <Link to="/contact">
-              ¿Empezamos?<ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <Link to="/contact" className="text-black font-regular">
+              ¿Empezamos? 
+            </Link><ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>
 

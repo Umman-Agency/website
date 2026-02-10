@@ -44,11 +44,11 @@ const About = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Calidad primero</h3>
-                <p className="text-lg text-gray-400">Cuidamos cada detalle para que el resultado se note desde el primer clic.</p>
+                <p className="text-lg text-white">Cuidamos cada detalle para que el resultado se note desde el primer clic.</p>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Impacto que se mide</h3>
-                <p className="text-lg text-gray-400">Probamos, ajustamos y optimizamos para que tus objetivos se vean en números, no en promesas.</p>
+                <p className="text-lg text-white">Probamos, ajustamos y optimizamos para que tus objetivos se vean en números, no en promesas.</p>
               </div>
             </div>
           </motion.div>
@@ -93,11 +93,11 @@ const About = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Estrategia y descubrimiento</h3>
-                <p className="text-lg text-gray-400">Nos metemos a fondo en tu marca, tu gente y tus objetivos para armar un plan claro y realista.</p>
+                <p className="text-lg text-white">Nos metemos a fondo en tu marca, tu gente y tus objetivos para armar un plan claro y realista.</p>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Ejecución creativa</h3>
-                <p className="text-lg text-gray-400">Convertimos la estrategia en piezas y acciones. Trabajamos contigo, afinamos y dejamos todo listo para salir.</p>
+                <p className="text-lg text-white">Convertimos la estrategia en piezas y acciones. Trabajamos contigo, afinamos y dejamos todo listo para salir.</p>
               </div>
             </div>
           </motion.div>

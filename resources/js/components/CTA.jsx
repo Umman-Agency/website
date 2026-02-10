@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import AnimatedCtaBackground from './AnimatedCtaBackground';
@@ -17,12 +16,12 @@ const CTA = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
           >
-            ¿Empezamos para <span className="text-accent-clearBlue">mover tu marca</span>?
+            ¿<i>Empezamos</i> para <span className="text-accent-clearBlue">mover tu marca</span>?
           </h2>
           <p
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+            className="text-xl text-white mb-12 max-w-2xl mx-auto"
           >
             Cuéntanos qué necesitas y te decimos por dónde empezar.
           </p>
@@ -30,9 +29,9 @@ const CTA = () => {
             <Button
               onClick={handleCTAClick}
               size="lg"
-              className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black font-bold px-10 py-7 text-xl group"
+              className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black font-regular px-10 py-7 text-xl group"
             >
-              ¿Empezamos?
+              Empezar ahora
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
             </Button>
           </div>

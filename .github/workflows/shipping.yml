@@ -15,6 +15,8 @@ jobs:
     name: Build Frontend
     runs-on: ubuntu-latest
     continue-on-error: false
+    env:
+      NODE_VERSION: '${{ vars.NODE_VERSION }}'
 
     steps:
        - name: Checkout code
@@ -57,8 +59,6 @@ jobs:
        - name: Setup Node.js
          if: steps.check_package.outputs.exists == 'true'
          uses: actions/setup-node@v4
-         env:
-          NODE_VERSION: ${{ vars.NODE_VERSION }}
          with:
           node-version: $NODE_VERSION
           cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
@@ -102,6 +102,7 @@ jobs:
       SSH_PORT: ${{ secrets.SSH_PORT }}
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+      NODE_VERSION: ${{ vars.NODE_VERSION }}
 
     runs-on: ubuntu-latest
 
@@ -125,8 +126,6 @@ jobs:
        - name: Setup Node.js (for asset building)
          if: hashFiles('package.json') != ''
          uses: actions/setup-node@v4
-         env:
-          NODE_VERSION: ${{ vars.NODE_VERSION }}
          with:
           node-version: $NODE_VERSION
           cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}

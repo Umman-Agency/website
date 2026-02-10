@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import AboutBussinessForm from "@/components/yourself/AboutBussinessForm";
+// import AboutBussinessForm from "@/components/yourself/AboutBussinessForm";
 import CaptureForm from "@/components/yourself/CaptureForm";
 import FormSteps from "@/components/yourself/FormSteps";
 import MediaApproachForm from "@/components/yourself/MediaApproachForm";
@@ -8,9 +8,9 @@ import MetadataForm from "@/components/yourself/MetadataForm";
 import StrategyForm from "@/components/yourself/StrategyForm";
 import TargetPublicForm from "@/components/yourself/TargetPublicForm";
 
+import { type CapturableForm } from "@/types/universal";
 import Dashboard from "./dashboard";
 
-import { type CapturableForm } from "@/types/universal";
 
 
 export default function Yourself() {

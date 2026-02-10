@@ -78,7 +78,7 @@ const Header = () => {
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} onClick={handleSmoothScroll} className="text-white-300 hover:text-white transition-colors relative group">
+              <a key={link.name} href={link.href} onClick={handleSmoothScroll} className="text-white-300 text-white transition-colors relative group">
                 {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent-clearBlue transition-all duration-300 group-hover:w-full"></span>
               </a>

@@ -53,7 +53,7 @@ const Portfolio = () => {
             </h2>
           </div>
           <div className="w-full lg:w-1/3">
-            <p className="text-lg text-white-400">
+            <p className="text-lg text-white">
               Mira lo que hemos hecho y lo que podemos hacer contigo. Proyectos
               de marca, web y campañas pensados para que se vea bien… y funcione
               mejor.

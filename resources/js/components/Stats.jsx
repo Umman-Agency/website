@@ -68,7 +68,7 @@ const Stats = ({ customStats }) => {
   const isProjectPage = !!customStats;
 
   return (
-    <section id="achievements" className="py-24 bg-[#0C0D0D]">
+    <section id="achievements" className="py-12 md:py-24 bg-[#0C0D0D]">
       <div className="container mx-auto px-6">
         <Tag value="Logros"></Tag>
         {!isProjectPage && (
@@ -78,15 +78,11 @@ const Stats = ({ customStats }) => {
                 Trabajo que se <i><b>nota</b></i>, se <i><b>mide</b></i> y <i><b>te devuelve tiempo</b></i>
               </h2>
             </div>
-            <p className="text-lg text-white-400">
+            <p className="text-lg text-white">
               Objetivos cumplidos y números que lo respaldan: proyectos entregados, crecimiento medible y clientes felices.
             </p>
-            {/* <div className="flex items-end">
-            </div> */}
           </div>
         )}
-
-        
         {isProjectPage && (
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase">
@@ -94,7 +90,6 @@ const Stats = ({ customStats }) => {
                 </h2>
             </div>
         )}
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
@@ -106,7 +101,7 @@ const Stats = ({ customStats }) => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">{stat.label}</h3>
-                <p className="text-gray-400">{stat.description}</p>
+                <p className="text-white">{stat.description}</p>
               </div>
             </div>
           ))}
