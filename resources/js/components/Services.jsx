@@ -31,7 +31,7 @@ const Services = () => {
   const filterTags = ['Marketing Digital', 'Redes Sociales', 'Estrategia de Marca', 'SEO/SEM', 'Creación de contenido'];
 
   return (
-    <section id="services" className="py-24 bg-[#0C0D0D]">
+    <section id="services" className="py-12 md:py-24 bg-[#0C0D0D]">
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16">
           {/* <div className="border px-4 py-1.5 inline-block rounded-full text-(--white-75) text-0.8 text-sm mb-4">

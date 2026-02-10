@@ -38,7 +38,7 @@ const Portfolio = () => {
     return `/project/${slug}`;
   };
   return (
-    <section id="portfolio" className="py-24 bg-[#0C0D0D] ">
+    <section id="portfolio" className="py-12 md:py-24 bg-[#0C0D0D] ">
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-8 mb-16">
           <div className="w-full">
