@@ -48,10 +48,9 @@ const defaultStats = [
     {
         title: (
             <span>
-                Proyectos que siguen <i>creciendo</i>
+                Proyectos que siguen <b><i>creciendo</i></b>
             </span>
         ),
-        suffix: "+",
         label: "Proyectos",
         description:
             "Entregados en +20 países, de marcas pequeñas a equipos grandes.",
@@ -59,11 +58,10 @@ const defaultStats = [
     {
         title: (
             <span>
-                <i>Eficiencia</i>
+                <b><i>Eficiencia</i></b>
                 en el día a día
             </span>
         ),
-        suffix: "%",
         label: "Más eficiencia",
         description:
             "Procesos y contenido que ordenan el día a día y aceleran decisiones.",
@@ -71,7 +69,7 @@ const defaultStats = [
     {
         title: (
             <span>
-                Piezas y campañas con <i>intención</i>
+                Piezas y campañas con <b><i>intención</i></b>
             </span>
         ),
         suffix: "+",
@@ -82,10 +80,9 @@ const defaultStats = [
     {
         title: (
             <span>
-                Colaboraciones que dejan <i>huella</i>
+                Colaboraciones que dejan <b><i>huella</i></b>
             </span>
         ),
-        suffix: "+",
         label: "Colaboraciones y menciones",
         description:
             "Confianza construida con resultados y recomendaciones reales.",
