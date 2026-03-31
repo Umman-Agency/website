@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const imageUrl = 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/71f6723b117af5fb7e36d829dfcd6b7f.jpg';
+const imageUrl = 'https://www.umman.es/assets';
 
 const layers = [
   {

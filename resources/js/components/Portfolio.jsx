@@ -9,7 +9,7 @@ const projects = [
     title: "Next-Gen Banking UI",
     description:
       "A dark-themed social media application interface shown on a smartphone.",
-    src: "https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/tech-daily-lkyv7faumza-unsplash-2-FOBCl.jpg",
+    src: "https://www.umman.es/assets",
     imgKey: "dark mode social media app on phone",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     title: "Fintech Dashboard",
     description:
       "A fintech application dashboard with payment details, displayed on a smartphone next to a keyboard.",
-    src: "https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/gemini_generated_image_n6u5epn6u5epn6u5-5abrf-2-W2Hon.jpg",
+    src: "https://www.umman.es/assets",
     imgKey: "fintech app on phone next to keyboard",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     title: "Digital Marketing Agency Site",
     description:
       "A digital marketing agency website homepage, shown on a smartphone with a sleek, modern design.",
-    src: "https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/sumup-vsyr_mbh7q4-unsplash-2-Hxitr.jpg",
+    src: "https://www.umman.es/assets",
     imgKey: "digital marketing agency website on phone",
   },
 ];

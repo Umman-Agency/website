@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const clientLogos = [
-  { name: 'LATAM', description: 'Logo de LATAM', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/2b035e21fa8f1f5c4f27735b6b46e1fd.png' },
-  { name: 'Microsoft', description: 'Logo de Microsoft', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/ae772816c1c045c53c050fb3ab0073d5.png' },
-  { name: 'photoAiD', description: 'Logo de photoAiD', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/f7374f37f8443476e073d9c412bd8848.png' },
-  { name: 'Starbucks', description: 'Logo de Starbucks', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/4a2d0216857a34a4d762d5d1f716f308.png' },
-  { name: 'Uber', description: 'Logo de Uber', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/fe6656a357591f9b557a3cf8fab197a9.png' },
-  { name: 'Discord', description: 'Logo de Discord', imageUrl: 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/169ddd06dd1e1da36512c1eccfe4c7ef.png' }
+  { name: 'LATAM', description: 'Logo de LATAM', imageUrl: 'https://www.umman.es/assets' },
+  { name: 'Microsoft', description: 'Logo de Microsoft', imageUrl: 'https://www.umman.es/assets' },
+  { name: 'photoAiD', description: 'Logo de photoAiD', imageUrl: 'https://www.umman.es/assets' },
+  { name: 'Starbucks', description: 'Logo de Starbucks', imageUrl: 'https://www.umman.es/assets' },
+  { name: 'Uber', description: 'Logo de Uber', imageUrl: 'https://www.umman.es/assets' },
+  { name: 'Discord', description: 'Logo de Discord', imageUrl: 'https://www.umman.es/assets' }
 ];
 
 const marqueeLogos = [...clientLogos, ...clientLogos]; // Duplicate for seamless loop

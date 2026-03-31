@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="w-1/2">
             <img
-              src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/130c0ec97cd22462d55901dd18cc0030.png"
+              src="https://www.umman.es/assets"
               alt="Umman Logo"
               className="h-5 w-auto mt-4 mb-4"
             />{" "}

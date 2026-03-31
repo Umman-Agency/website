@@ -20,7 +20,7 @@ const About = () => {
           ease: 'easeOut'
         }}>
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img className="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/charlesdeluvio-lks7vei-eag-unsplash-7Or6F.jpg" />
+              <img className="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="https://www.umman.es/assets" />
             </div>
           </motion.div>
 
@@ -69,7 +69,7 @@ const About = () => {
           ease: 'easeOut'
         }} className="lg:order-last">
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img className="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/michael-t-rxri-ho62y4-unsplash-2-tvxRc.jpg" />
+              <img className="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="https://www.umman.es/assets" />
             </div>
           </motion.div>
 

@@ -10,6 +10,7 @@ Route::get('/', function () {
 Route::prefix('dashboard')->group(function (){
 
   Route::get('/', function (){
+    // Put here the logging 
     return Inertia::render('dashboard');
   });
 

@@ -74,7 +74,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-6 h-20 flex justify-between items-center">
           <Link to="/" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
-            <img src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/130c0ec97cd22462d55901dd18cc0030.png" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
+            <img src="https://www.umman.es/assets" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -109,7 +109,7 @@ const Header = () => {
             <div className="container mx-auto px-6 h-full flex flex-col">
               <div className="flex items-center h-20">
                 <Link to="/" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
-                  <img src="https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/130c0ec97cd22462d55901dd18cc0030.png" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
+                  <img src="https://www.umman.es/assets" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
                 </Link>
                 <button onClick={() => setIsOpen(false)} className="text-white">
                   <X size={28} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const imageUrl = 'https://horizons-cdn.hostinger.com/258a96df-c479-4700-b7e2-08531e163395/71f6723b117af5fb7e36d829dfcd6b7f.jpg';
+const imageUrl = 'assets/banner_principal.jpg';
 
 const layers = [
   {
@@ -30,7 +30,7 @@ const AnimatedHeroBackground = () => {
       {layers.map((layer, index) => (
         <motion.div
           key={index}
-          className="absolute inset-[-10%] w-[120%] h-[120%]"
+          className="absolute inset-[-10%] w-[100%] h-[100%]"
           initial={layer.initial}
           animate={layer.animate}
           transition={layer.transition}
