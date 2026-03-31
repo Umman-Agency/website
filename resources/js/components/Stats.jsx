@@ -53,18 +53,18 @@ const defaultStats = [
         ),
         label: "Proyectos",
         description:
-            "Entregados en +20 países, de marcas pequeñas a equipos grandes.",
+            "Resultados reales, proyectos bien cerrados, mejoras medibles y crecimiento constante.",
     },
     {
         title: (
             <span>
-                <b><i>Eficiencia</i></b>
+                <b><i>Eficiencia</i></b><br/>
                 en el día a día
             </span>
         ),
         label: "Más eficiencia",
         description:
-            "Procesos y contenido que ordenan el día a día y aceleran decisiones.",
+            "Procesos más ágiles para crear, publicar y optimizar sin complicarte",
     },
     {
         title: (
@@ -72,10 +72,9 @@ const defaultStats = [
                 Piezas y campañas con <b><i>intención</i></b>
             </span>
         ),
-        suffix: "+",
         label: "Piezas y campañas",
         description:
-            "Estrategia, creatividad y ejecución para crecer con consistencia.",
+            "Contenido pensado para verse bien, comunicar claro y mover resultados",
     },
     {
         title: (
@@ -132,17 +131,17 @@ const Stats = ({ customStats }) => {
                         </h2>
                     </div>
                 )}
-                <div className="grid grid-cols-auto grid-flow-col md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto">
+                <div className="grid justify-center grid-cols-[262px_262px] grid-flow-col lg:grid-cols-[repeat(4,284px)] gap-6 gap-8 overflow-x-auto py-8 scrollbar-beautiful snap-x snap-mandatory scroll-smooth">
                     {stats.map((stat, index) => (
                         <div
                             key={stat.label}
-                            className={`bg-${index} p-8 rounded-2xl h-full w-66 md:w-auto`}
+                            className={`flex flex-col justify-around bg-${index} p-8 rounded-2xl h-full w-66 md:w-auto shrink-0`}
                         >
-                            <div className="text-xl md:text-2xl font-bold text-white mb-6">
+                            <div className="text-xl md:text-2xl font-bold text-white mt-2 mb-6">
                                 <motion.p>{stat.title}</motion.p>
                             </div>
                             <div>
-                                <p className="text-white">{stat.description}</p>
+                                <p className="text-white m-0">{stat.description}</p>
                             </div>
                         </div>
                     ))}

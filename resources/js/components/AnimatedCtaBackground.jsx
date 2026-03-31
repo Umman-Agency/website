@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const imageUrl = 'https://www.umman.es/assets';
+const imageUrl = 'assets/fondo_cta.png';
 
 const layers = [
   {

@@ -1,5 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Tag } from "./ui/tag";
 const projects = [
@@ -9,7 +7,7 @@ const projects = [
     title: "Next-Gen Banking UI",
     description:
       "A dark-themed social media application interface shown on a smartphone.",
-    src: "https://www.umman.es/assets",
+    src: "assets/dior.jpg",
     imgKey: "dark mode social media app on phone",
   },
   {
@@ -18,7 +16,7 @@ const projects = [
     title: "Fintech Dashboard",
     description:
       "A fintech application dashboard with payment details, displayed on a smartphone next to a keyboard.",
-    src: "https://www.umman.es/assets",
+    src: "assets/boxing.jpg",
     imgKey: "fintech app on phone next to keyboard",
   },
   {
@@ -27,7 +25,7 @@ const projects = [
     title: "Digital Marketing Agency Site",
     description:
       "A digital marketing agency website homepage, shown on a smartphone with a sleek, modern design.",
-    src: "https://www.umman.es/assets",
+    src: "assets/kids.jpg",
     imgKey: "digital marketing agency website on phone",
   },
 ];
@@ -52,7 +50,7 @@ const Portfolio = () => {
               nivel
             </h2>
           </div>
-          <div className="w-full lg:w-1/3">
+          <div className="w-full">
             <p className="text-lg text-white">
               Mira lo que hemos hecho y lo que podemos hacer contigo. Proyectos
               de marca, web y campañas pensados para que se vea bien… y funcione
@@ -62,10 +60,10 @@ const Portfolio = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 container mx-auto md:px-0 px-4 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-6 items-center justify-between">
+      <div className="grid grid-cols-[357px] lg:grid-cols-[repeat(3,1fr)] container mx-auto md:px-0 px-4 md:grid-cols-2 md:gap-4 gap-8 justify-start justify-between">
         {projects.map((project) => (
           <div
-            className="group relative aspect-6/8 h-107 md:h-122 w-full mx-auto max-w-sm rounded-2xl overflow-hidden cursor-pointer"
+            className="group w-full aspect-6/8 relative h-107 md:h-122 mx-auto max-w-sm rounded-2xl overflow-hidden cursor-pointer"
             onClick={() => handleProjectClick(project.slug)}
             key={project.title}
           >

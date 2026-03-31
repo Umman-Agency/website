@@ -43,7 +43,7 @@ const Footer = () => {
       ],
     },
     {
-      title: "Company",
+      title: "Atención al cliente",
       items: [
         { name: "Soluciones@umman.es", href: "/#" },
         { name: "(+34) 641 01 39 59", href: "/#services" },
@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="w-1/2">
             <img
-              src="https://www.umman.es/assets"
+              src="assets/logo_umman.png"
               alt="Umman Logo"
               className="h-5 w-auto mt-4 mb-4"
             />{" "}
@@ -96,10 +96,10 @@ const Footer = () => {
 
           {footerSections.map((section) => (
             <div key={section.title}>
-              <p className="font-semibold text-white mb-4">{section.title}</p>
-              <ul className="space-y-2">
+              <p className="font-semibold text-white mb-2">{section.title}</p>
+              <ul className="space-y-2 list-none p-0">
                 {section.items.map((link) => (
-                  <li key={link.name}>
+                  <li className="p-0" key={link.name}>
                     <Link
                       to={link.href}
                       // onClick={(e) => {
