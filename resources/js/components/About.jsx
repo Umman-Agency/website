@@ -20,7 +20,7 @@ const About = () => {
           ease: 'easeOut'
         }}>
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img className="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="https://www.umman.es/assets" />
+              <img className="w-full h-full object-cover" alt="Modern office with creative team working on computers" src="assets/Nosotros_img1.png" />
             </div>
           </motion.div>
 
@@ -69,7 +69,7 @@ const About = () => {
           ease: 'easeOut'
         }} className="lg:order-last">
             <div className="rounded-2xl overflow-hidden aspect-4/3">
-              <img className="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="https://www.umman.es/assets" />
+              <img className="w-full h-full object-cover" alt="Diverse team collaborating around a table with laptops and notes" src="assets/Nosotros_img2.png" />
             </div>
           </motion.div>
 

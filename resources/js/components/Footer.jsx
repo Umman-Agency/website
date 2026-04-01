@@ -70,7 +70,7 @@ const Footer = () => {
             <img
               src="assets/logo_umman.png"
               alt="Umman Logo"
-              className="h-5 w-auto mt-4 mb-4"
+              className="h-auto w-auto mt-4 mb-4"
             />{" "}
             {/* Changed h-10 to h-5 */}
             <div className="flex space-x-4">

@@ -38,7 +38,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="py-12 md:py-24 bg-[#0C0D0D] ">
       <div className="container mx-auto px-6">
-        <div className="flex flex-wrap justify-between items-end gap-8 mb-16">
+        <div className="flex flex-wrap justify-stretch items-end gap-8 mb-16">
           <div className="w-full">
             <Tag value="Portafolio"></Tag>
 
@@ -60,10 +60,10 @@ const Portfolio = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-[357px] lg:grid-cols-[repeat(3,1fr)] container mx-auto md:px-0 px-4 md:grid-cols-2 md:gap-4 gap-8 justify-start justify-between">
+      <div className="grid grid-cols-[357px] lg:grid-cols-[repeat(3,1fr)] container mx-auto md:px-0 px-4 md:grid-cols-2 md:gap-4 gap-8 items-stretch">
         {projects.map((project) => (
           <div
-            className="group w-full aspect-6/8 relative h-107 md:h-122 mx-auto max-w-sm rounded-2xl overflow-hidden cursor-pointer"
+            className="group w-full aspect-6/8 relative h-107 md:h-160 mx-auto max-w-sm lg:max-w-full rounded-2xl overflow-hidden cursor-pointer"
             onClick={() => handleProjectClick(project.slug)}
             key={project.title}
           >
