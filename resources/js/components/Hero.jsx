@@ -7,7 +7,7 @@ import TrustedClients from './TrustedClients';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen pt-26 flex grow-1 flex-col items-center justify-between gap-5 text-center overflow-hidden bg-black">
+    <section className="relative h-80% md:h-screen pt-26 flex grow-1 flex-col items-center justify-between gap-5 text-center overflow-hidden bg-black">
       <AnimatedHeroBackground />
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
 

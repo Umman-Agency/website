@@ -96,8 +96,8 @@ const Header = () => {
           >
             <div className="container mx-auto px-6 h-full flex flex-col">
               <div className="flex items-center h-20">
-                <Link to="/" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
-                  <img src="https://www.umman.es/assets" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
+                <Link href="/welcome"  className="text-2xl font-bold text-white tracking-wider">
+                  <img src="assets/logo_umman.png" alt="Umman Logo" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
                 </Link>
                 <button onClick={() => setIsOpen(false)} className="text-white">
                   <X size={28} />
