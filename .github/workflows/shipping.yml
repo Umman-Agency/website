@@ -1,0 +1,239 @@
+name: Shipping
+
+env:
+  BRANCH: ${{ vars.BRANCH }}
+
+on:
+  push:
+    branches:
+      - feat/php
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    env:
+      NODE_VERSION: '${{ vars.NODE_VERSION }}'
+
+    steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
+
+      #  - name: Setup PHP
+      #    uses: shivammathur/setup-php@v2
+      #    env:
+      #     PHP_VERSION: ${{ vars.PHP_VERSION }}
+      #    with:
+      #     php-version: $PHP_VERSION
+      #     extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
+      #     # github-token: ${{ secrets.EXTENDED_TOKEN }}
+
+      #  - name: Copy .env
+      #    run: |
+      #     if [ -f .env.example ]; then
+      #       cp .env.example .env
+      #     else
+      #       echo "⚠️ .env.example not found, creating minimal .env"
+      #       echo "APP_ENV=testing" > .env
+      #       echo "APP_KEY=" >> .env
+      #     fi
+
+      #  - name: Install Composer Dependencies
+      #    run: composer install --prefer-dist --no-interaction --no-progress
+
+      #  - name: Generate Application Key
+      #    run: php artisan key:generate --ansi
+
+       - name: Check for package.json
+         id: check_package
+         run: |
+          if [ -f package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+       - name: Setup Node.js
+         if: steps.check_package.outputs.exists == 'true'
+         uses: actions/setup-node@v4
+         with:
+          node-version: $NODE_VERSION
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
+
+       - name: Install NPM Dependencies
+         if: steps.check_package.outputs.exists == 'true'
+         continue-on-error: true
+         run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            echo "ℹ️ No package-lock.json found, using npm install"
+            npm install
+          fi
+
+       - name: Build Assets
+         if: steps.check_package.outputs.exists == 'true'
+         continue-on-error: true
+         run: |
+          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
+            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
+          else
+            echo "⚠️ No build script found in package.json"
+          fi
+
+       - name: Upload Built Assets
+         if: steps.check_package.outputs.exists == 'true'
+         uses: actions/upload-artifact@v4
+         with:
+          name: build-assets
+          path: public/build/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  deploy:
+    name: Copy and Install to Hostinger
+    needs: build
+    env:
+      SSH_FILE_NAME: ${{ secrets.SSH_FILE_NAME }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+      NODE_VERSION: ${{ vars.NODE_VERSION }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      #  - name: Setup PHP
+      #    uses: shivammathur/setup-php@v2
+      #    env:
+      #     PHP_VERSION: ${{ vars.PHP_VERSION }}
+      #    with:
+      #     php-version: $PHP_VERSION
+      #     extensions: mbstring, xml, bcmath, pdo_mysql
+      #     # github-token: ${{ secrets.EXTENDED_TOKEN }}
+
+       - name: Download Built Assets
+         uses: actions/download-artifact@v4
+         with:
+          name: build-assets
+          path: public/build/
+         continue-on-error: true
+
+       - name: Setup Node.js (for asset building)
+         if: hashFiles('package.json') != ''
+         uses: actions/setup-node@v4
+         with:
+          node-version: $NODE_VERSION
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
+
+       - name: Build Frontend Assets (if needed)
+         continue-on-error: true
+         if: hashFiles('package.json') != ''
+         run: |
+          echo "📦 Installing NPM dependencies..."
+          if [ -f package-lock.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --prefer-offline --no-audit
+          else
+            echo "ℹ️ No package-lock.json found, using npm install"
+            npm install --prefer-offline --no-audit
+          fi
+          
+          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
+            echo "🔨 Building assets for production..."
+            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
+            echo "ℹ️ Note: Built assets should be committed to your repository for deployment"
+            echo "   (NPM may not be available on the remote server)"
+          else
+            echo "ℹ️ No build script found in package.json"
+          fi
+
+       - name: Copy Build Files to Target Server
+         continue-on-error: true
+         run: |
+          if [ -d "${{ github.workspace }}/public/build" ]; then
+            rsync -r -e "ssh -p $SSH_PORT" ${{ github.workspace }}/public/build/ $SSH_USERNAME@$SSH_HOST:~/domains/$WEBSITE_FOLDER/public/build
+          else
+            echo "ℹ️ No build directory found, skipping asset copy"
+          fi
+        
+       - name: Install SSH key
+
+         run: |
+          mkdir -p ~/.ssh/
+          echo $SSH_PRIVATE_KEY > ~/.ssh/$SSH_FILE_NAME
+          chmod 600 ~/.ssh/$SSH_FILE_NAME
+          ssh-keyscan -t eds25519 -p $SSH_PORT $SSH_HOST >> ~/.ssh/known_hosts
+
+       - name: Deploy to Hostinger Server
+         uses: appleboy/ssh-action@master
+         with:
+          host: $SSH_HOST
+          username: $SSH_USERNAME
+          port: $SSH_PORT
+          key: ~/.ssh/$SSH_FILE_NAME
+          script: |
+            set -e
+            
+            echo "🚀 Starting deployment..."
+            
+            cd domains/$WEBSITE_FOLDER
+            
+            # Ensure we're on the correct branch
+            git fetch origin
+            git checkout $BRANCH
+            git reset --hard origin/$BRANCH
+            
+            echo "📦 Installing Composer dependencies..."
+            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+            
+            # Note: Frontend assets should already be built and committed
+            # If you need to build on server, ensure npm/node is available
+            # and uncomment the following lines:
+            # if [ -f package.json ]; then
+            #   npm ci --production && npm run build || npm run prod
+            # fi
+            
+            echo "🔧 Running Laravel setup commands..."
+            
+            # Run migrations
+            php8 artisan migrate --force
+            
+            # Clear and cache configuration
+            php8 artisan config:clear
+            php8 artisan config:cache
+            
+            # Clear and cache routes
+            php8 artisan route:clear
+
+            php8 artisan route:cache
+            
+            # Clear and cache views
+            php8 artisan view:clear
+            php8 artisan view:cache
+            
+            # Optimize application
+            php8 artisan optimize:clear
+            php8 artisan optimize
+            
+            # Clear and cache events (if available)
+            php8 artisan event:clear || true
+            php8 artisan event:cache || true
+            
+            # Restart queue workers (if using queues)
+            php8 artisan queue:restart || true
+            
+            # Restart Horizon (if using Laravel Horizon)
+            php8 artisan horizon:terminate || true
+            
+            # Clear application cache
+            php8 artisan cache:clear
+            
+            # Clear OPcache (if available)
+            php8 artisan opcache:clear || true
+            
+            echo "✅ Deployment completed successfully!"
+      

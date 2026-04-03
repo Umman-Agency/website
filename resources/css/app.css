@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+/* @source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php'; */
+
+@layer base {
+  :root {
+    /* --background: 260 100% 4%; */
+    --background: rgba(12, 13, 13, 1);
+    --foreground: 210 40% 98%;
+
+    --card: 260 100% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 260 100% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+
+    --white-75: #FFFFFFAB;
+    --gradient-stat-card-first: linear-gradient(134.43deg, #2D2D2D 1.16%, #010101 97.92%);
+    --bold-grey: #2D2D2D;
+
+    .bg-0 {
+      background: linear-gradient(134.43deg, #2D2D2D 1.16%, #010101 97.92%);
+      border: 1px solid;
+      border-image-source: linear-gradient(180deg, #030303 0%, #2A2A2A 100%);
+    }
+
+    .bg-1 {
+      background: linear-gradient(223.8deg, #2D2D2D 0%, #010101 99.85%);
+      border-image-source: linear-gradient(180deg, #030303 0%, #2A2A2A 100%);
+    }
+
+    .bg-2 {
+      background: linear-gradient(134.43deg, #2D2D2D 1.16%, #010101 97.92%);
+      border-image-source: linear-gradient(180deg, #030303 0%, #2A2A2A 100%);
+    }
+
+    .bg-3 {
+      background: linear-gradient(224.07deg, #2D2D2D -3.59%, #010101 101.78%);
+      border: 1px solid;
+      border-image-source: linear-gradient(133.26deg, #030303 3.15%, #2A2A2A 97.32%);
+    }
+  }
+
+
+  * {
+    /* @apply border; */
+  }
+
+  body,
+  html {
+    /* @apply bg-background text-foreground; */
+    cursor: default;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  h1 {
+    @apply mb-4 text-4xl font-bold tracking-tight text-gray-900;
+  }
+  ul {
+    @apply list-disc pl-6;
+  }
+  ol {
+    @apply list-decimal pl-6;
+  }
+  p {
+    @apply mb-2 mt-2;
+  }
+  a {
+    @apply text-blue-600 hover:text-pink-400 visited:text-blue-900;
+  }
+}
+
+@theme {
+    --color-primary-palpable:hsla(179, 100%, 50%, 1);
+    --color-light-border-line: hsla(0, 0%, 24%, 1);
+    --color-light-dash: hsla(210, 38%, 97%, 1);
+}
+/* For Webkit-based browsers (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Custom beautiful horizontal scrollbar */
+.scrollbar-beautiful {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.8) rgba(15, 23, 42, 0.35);
+}
+
+.scrollbar-beautiful::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.8);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.65);
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 1);
+}
