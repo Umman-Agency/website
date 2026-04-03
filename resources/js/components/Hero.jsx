@@ -83,7 +83,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-      <TrustedClients />
+      {/* <TrustedClients /> */}
     </section>
   );
 };

@@ -65,7 +65,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#0C0D0D] border-t border-transparent pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="w-1/2">
             <img
               src="assets/logo_umman.png"
@@ -99,7 +99,7 @@ const Footer = () => {
               <p className="font-semibold text-white mb-2">{section.title}</p>
               <ul className="space-y-2 list-none p-0">
                 {section.items.map((link) => (
-                  <li className="p-0" key={link.name}>
+                  <li className="p-0 font-medium" key={link.name}>
                     <Link
                       to={link.href}
                       // onClick={(e) => {

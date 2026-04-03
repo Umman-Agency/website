@@ -16,6 +16,8 @@ node_modules
 public/build
 public/build/
 public/hot
+public/assets
+bootstrap/ssr
 public/storage
 /storage/*.key
 /storage/pail/
@@ -25,3 +27,4 @@ vendor/
 Homestead.json
 Homestead.yaml
 Thumbs.db
+*.code-workspace

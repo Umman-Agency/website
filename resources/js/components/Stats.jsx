@@ -96,42 +96,7 @@ const Stats = ({ customStats }) => {
         <section id="achievements" className="py-12 md:py-24 bg-[#0C0D0D]">
             <div className="container mx-auto px-6">
                 <Tag value="Logros"></Tag>
-                {!isProjectPage && (
-                    <div className="grid grid-cols-1 gap-8 mb-16">
-                        <div>
-                            <h2 className="text-3xl md:text-5xl lg:text-4xl font-bold text-white">
-                                Trabajo que se{" "}
-                                <i>
-                                    <b>nota</b>
-                                </i>
-                                , se{" "}
-                                <i>
-                                    <b>mide</b>
-                                </i>{" "}
-                                y{" "}
-                                <i>
-                                    <b>te devuelve tiempo</b>
-                                </i>
-                            </h2>
-                        </div>
-                        <p className="text-lg text-white">
-                            Objetivos cumplidos y números que lo respaldan:
-                            proyectos entregados, crecimiento medible y clientes
-                            felices.
-                        </p>
-                    </div>
-                )}
-                {isProjectPage && (
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase">
-                            Project{" "}
-                            <span className="text-accent-clearBlue">
-                                Impact
-                            </span>
-                        </h2>
-                    </div>
-                )}
-                <div className="grid justify-center grid-cols-[262px_262px] grid-flow-col lg:grid-cols-[repeat(4,284px)] gap-6 gap-8 overflow-x-auto py-8 scrollbar-beautiful snap-x snap-mandatory scroll-smooth">
+                <div className="grid justify-center grid-cols-[repeat(4,284px)] grid-flow-col lg:grid-cols-[repeat(4,minmax(284px, 360px)] gap-8 overflow-x-auto py-8 scrollbar-beautiful snap-x snap-mandatory scroll-smooth">
                     {stats.map((stat, index) => (
                         <div
                             key={stat.label}

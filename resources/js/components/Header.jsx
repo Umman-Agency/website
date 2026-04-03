@@ -60,21 +60,14 @@ const Header = () => {
     }
   }
 
-  // const handleCTA = () => {
-  //   navigate('/contact');
-  //   if (isOpen) {
-  //     setIsOpen(false);
-  //   }
-  // };
-
   return (
     <>
       <motion.header
         className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-[#0C0D0D]/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}
       >
         <div className="container mx-auto px-6 h-20 flex justify-between items-center">
-          <Link to="/" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
-            <img src="assets/logo_umman.png" alt="Logo de Umman" className="h-5 w-auto" /> {/* Changed h-10 to h-5 */}
+          <Link to="/welcome" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
+            <img src="assets/logo_umman.png" alt="Logo de Umman" className="h-auto w-auto" /> {/* Changed h-10 to h-5 */}
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
