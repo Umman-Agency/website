@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   const handleScroll = () => {
-    if (window.scrollY > 10) {
+    if (window.scrollY > 12) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -52,13 +52,13 @@ const Header = () => {
     }
   };
   
-  const handleHomeClick = (e) => {
-     e.preventDefault();
-    //  navigate('/');
-     if (isOpen) {
-      setIsOpen(false);
-    }
-  }
+  // const handleHomeClick = (e) => {
+  //    e.preventDefault();
+  //   //  navigate('/');
+  //    if (isOpen) {
+  //     setIsOpen(false);
+  //   }
+  // }
 
   return (
     <>
@@ -66,7 +66,7 @@ const Header = () => {
         className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-[#0C0D0D]/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}
       >
         <div className="container mx-auto px-6 h-20 flex justify-between items-center">
-          <Link to="/welcome" onClick={handleHomeClick} className="text-2xl font-bold text-white tracking-wider">
+          <Link href="/welcome" className="text-2xl font-bold text-white tracking-wider">
             <img src="assets/logo_umman.png" alt="Logo de Umman" className="h-auto w-auto" /> {/* Changed h-10 to h-5 */}
           </Link>
           <nav className="hidden md:flex items-center gap-8">
@@ -77,11 +77,6 @@ const Header = () => {
               </a>
             ))}
           </nav>
-          {/* <div className="hidden md:flex items-center gap-4">
-            <Button className="bg-accent-clearBlue text-white hover:bg-accent-clearBlue/90 group rounded-full" onClick={handleCTA}>
-              Get Started <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div> */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white">
               <Menu size={28} />
