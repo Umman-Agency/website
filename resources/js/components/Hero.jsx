@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../lib/ui/button';
 import AnimatedHeroBackground from './AnimatedHeroBackground';
 import { Link } from '@inertiajs/react';
 import TrustedClients from './TrustedClients';
@@ -50,7 +50,7 @@ const Hero = () => {
             size="lg"
             className="bg-primary-palpable hover:bg-accent-clearBlue/90 text-black text-lg font-regular py-7 px-10 shadow-lg shadow-accent-clearBlue/40 transition-all duration-100 hover:scale-105 group"
           >
-            <Link to="/contact" className="text-black font-regular">
+            <Link href="/welcome" className="text-black font-regular" prefetch>
               ¿Empezamos? 
             </Link><ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>

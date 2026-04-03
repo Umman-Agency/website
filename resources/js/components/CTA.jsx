@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../lib/ui/button';
 import AnimatedCtaBackground from './AnimatedCtaBackground';
 
 const CTA = () => {

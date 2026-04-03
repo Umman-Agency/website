@@ -1,6 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
+/**
+ * 
+ * @param {{children: React.ReactNode, className?: string}} param0 
+ * @returns {React.ReactNode}
+ */
 const SectionAnimator = ({ children, className }) => {
   return (
     <motion.div

@@ -27,7 +27,7 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function configureViews(): void
     {
-      Fortify::loginView(fn (Request $request) => inertia('auth/login', [
+      Fortify::loginView(fn (Request $_request) => inertia('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
       ]));
     }

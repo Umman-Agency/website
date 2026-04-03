@@ -54,9 +54,3 @@ storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => (
 })
 
 store.form = storeForm
-
-const login = {
-    store: Object.assign(store, store),
-}
-
-export default login

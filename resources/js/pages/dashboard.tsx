@@ -1,19 +1,42 @@
 
-import BasicLayout from "@/layout/basic";
-import AsideBar from "@/lib/dashboard/AsideBar";
-import Header from "@/lib/dashboard/Header";
-import "@/lib/dashboard/dashboard.css";
+import { useState } from "react";
+// import AboutBussinessForm from "@/components/yourself/AboutBussinessForm";
+import CaptureForm from "@/components/dashboard/CaptureForm";
+import FormSteps from "@/components/dashboard/FormSteps";
+import MediaApproachForm from "@/components/dashboard/MediaApproachForm";
+import MetadataForm from "@/components/dashboard/MetadataForm";
+import StrategyForm from "@/components/dashboard/StrategyForm";
+import TargetPublicForm from "@/components/dashboard/TargetPublicForm";
 
-function Dashboard({children}){
-  return <main className="grid grid-cols-1 md:grid-rows-[minmax(4%,6%)_auto] md:grid-cols-[min(13.7%,15.35%)_1fr] min-h-screen gap-0">
-    <Header/>
-    <AsideBar />
-    <div className="bg-[#ffffff] col-span-2 row-start-2 flex-1 flex flex-col items-center px-8 py-10">
-      {children}
-    </div>
-  </main>
+import { type CapturableForm } from "@/types/universal";
+import Dashboard from "../layout/dashboard";
+
+
+
+export default function Yourself() {
+  const [currentStep, stepOn] = useState(0);
+
+  // let isReady = false;
+
+  const components = [MetadataForm, MediaApproachForm, TargetPublicForm, StrategyForm];
+
+  const points = ["Info. General", "Psicologia de Marca", "Público Objetivo", "Estrategia"];
+
+  // Derive over currenStep
+  function goNext() {
+    stepOn(currentStep + 1);
+  }
+
+  function getForm(index: number): CapturableForm {
+    return components[index];
+  }
+
+  return <>
+    <FormSteps points={points} current={currentStep} />
+    <section className="my-8 h-full flex items-center justify-center w-full ">
+      <CaptureForm counter={goNext} Children={getForm(currentStep)} />
+    </section>
+  </>
 }
 
-Dashboard.layout = page => <BasicLayout children={page} />;
-
-export default Dashboard;
+Yourself.layout = (page: React.ReactNode) => <Dashboard children={page} />;

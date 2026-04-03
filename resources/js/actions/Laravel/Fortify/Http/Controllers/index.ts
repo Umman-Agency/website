@@ -3,8 +3,8 @@ import PasswordResetLinkController from './PasswordResetLinkController'
 import NewPasswordController from './NewPasswordController'
 import RegisteredUserController from './RegisteredUserController'
 import ProfileInformationController from './ProfileInformationController'
-import ConfirmablePasswordController from './ConfirmablePasswordController'
 import ConfirmedPasswordStatusController from './ConfirmedPasswordStatusController'
+import ConfirmablePasswordController from './ConfirmablePasswordController'
 import TwoFactorAuthenticatedSessionController from './TwoFactorAuthenticatedSessionController'
 import TwoFactorAuthenticationController from './TwoFactorAuthenticationController'
 import ConfirmedTwoFactorAuthenticationController from './ConfirmedTwoFactorAuthenticationController'
@@ -18,8 +18,8 @@ const Controllers = {
     NewPasswordController: Object.assign(NewPasswordController, NewPasswordController),
     RegisteredUserController: Object.assign(RegisteredUserController, RegisteredUserController),
     ProfileInformationController: Object.assign(ProfileInformationController, ProfileInformationController),
-    ConfirmablePasswordController: Object.assign(ConfirmablePasswordController, ConfirmablePasswordController),
     ConfirmedPasswordStatusController: Object.assign(ConfirmedPasswordStatusController, ConfirmedPasswordStatusController),
+    ConfirmablePasswordController: Object.assign(ConfirmablePasswordController, ConfirmablePasswordController),
     TwoFactorAuthenticatedSessionController: Object.assign(TwoFactorAuthenticatedSessionController, TwoFactorAuthenticatedSessionController),
     TwoFactorAuthenticationController: Object.assign(TwoFactorAuthenticationController, TwoFactorAuthenticationController),
     ConfirmedTwoFactorAuthenticationController: Object.assign(ConfirmedTwoFactorAuthenticationController, ConfirmedTwoFactorAuthenticationController),

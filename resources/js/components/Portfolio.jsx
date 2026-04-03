@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { Tag } from "./ui/tag";
+import { Tag } from "@/lib/ui/tag";
 import {useState, useEffect, useRef} from "react";
 const projects = [
     {

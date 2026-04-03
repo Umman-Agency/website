@@ -1,6 +1,6 @@
 import { MotionConfig, useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Tag } from "./ui/tag";
+import { Tag } from "../lib/ui/tag";
 
 const AnimatedCounter = ({ to, suffix }) => {
     const ref = useRef(null);
@@ -88,6 +88,11 @@ const defaultStats = [
     },
 ];
 
+/**
+ * 
+ * @param {{customStats?: boolean}} param0 
+ * @returns 
+ */
 const Stats = ({ customStats }) => {
     const stats = customStats || defaultStats;
     const isProjectPage = !!customStats;

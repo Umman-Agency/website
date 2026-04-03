@@ -100,6 +100,7 @@
 @theme {
     --color-primary-palpable:hsla(179, 100%, 50%, 1);
     --color-light-border-line: hsla(0, 0%, 24%, 1);
+    --color-light-dash: hsla(210, 38%, 97%, 1);
 }
 /* For Webkit-based browsers (Chrome, Safari) */
 .scrollbar-hide::-webkit-scrollbar {

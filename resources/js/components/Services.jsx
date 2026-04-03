@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react'; // Changed import from ArrowRight, ArrowDownRight to Plus
-import { Tag } from './ui/tag';
+import { Tag } from '../lib/ui/tag';
 
 const services = [{
   title: 'Marketing Digital',

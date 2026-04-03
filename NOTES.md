@@ -1,5 +1,20 @@
 # Development Notes
 
+## Routes
+
+Check all the routes with:
+
+```bash
+$ php artisan route:list
+```
+
+Disable routes for Fortify
+
+```php
+'views' => true/false
+```
+
+
 ## Workflows & Dependencies
 
 For the Github Action, we will be using:
@@ -50,5 +65,10 @@ PHP_VERSION
 The default path is `public/build` and the days of retention `1`
 
 
+### Sources
 
+*Inertia*
 
+[Links](https://inertiajs.com/docs/v2/the-basics/links)
+
+[Forms](https://inertiajs.com/docs/v2/the-basics/forms)
