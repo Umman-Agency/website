@@ -1,7 +1,7 @@
 import AsideBar from "@/components/dashboard/AsideBar";
 import Header from "@/components/dashboard/Header";
 
-import "@/lib/dashboard/dashboard.css";
+import "../../css/dashboard.css";
 
 function Dashboard({ children }: { children: React.ReactNode }) {
   return <main className="grid grid-cols-1 md:grid-rows-[minmax(4%,6%)_auto] md:grid-cols-[min(13.7%,15.35%)_1fr] min-h-screen gap-0">

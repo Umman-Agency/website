@@ -11,7 +11,7 @@ const branding = {
 
 const local = {
   email: "correo.bonito@gmail.com",
-  password: "Secreto 🤐",
+  password: "Tú secreto 🤐",
 }
 
 function Login() {
@@ -49,14 +49,7 @@ function Login() {
                   Contraseña
                   <input id="password-login" name="password" type="password" placeholder={local["password"]} className="w-full" />
                 </label>
-                {
-                  errors &&
-                  <div className="text-red-500 py-4 my-2  ">
-                    <span>{errors.email}</span>
-                  </div>
-                }
                 <input type="submit" value="Ingresar" className="cursor-pointer" />
-
               </>
             )
           }

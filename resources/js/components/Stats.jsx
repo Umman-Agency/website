@@ -1,4 +1,4 @@
-import { MotionConfig, useInView, motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Tag } from "../lib/ui/tag";
 

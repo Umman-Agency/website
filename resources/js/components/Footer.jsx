@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import { toast } from "../lib/ui/use-toast";
 import { Link } from "@inertiajs/react";
 

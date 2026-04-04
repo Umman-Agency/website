@@ -9,7 +9,7 @@ import StrategyForm from "@/components/dashboard/StrategyForm";
 import TargetPublicForm from "@/components/dashboard/TargetPublicForm";
 
 import { type CapturableForm } from "@/types/universal";
-import Dashboard from "../layout/dashboard";
+import Dashboard from "@/layout/dashboard";
 
 
 
