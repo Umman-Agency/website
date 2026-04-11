@@ -7,13 +7,6 @@ const AsideBar = (props: any) => {
   return <>
     <aside id="sidebar" className=" bg-[#121212] row-end-3 text-gray-400 flex flex-col justify-between p-4 relative w-full" {...props}>
       <div>
-        <div className="flex items-center justify-between p-2 mb-8">
-          <h1 className="text-white text-xl font-bold italic tracking-tighter sidebar-header-text">umman</h1>
-          <button onClick={toggleSidebar} className="hover:text-white transition p-1">
-            <i className="fa-solid fa-up-right-and-down-left-from-center text-[12px] rotate-45"></i>
-          </button>
-        </div>
-
         <nav className="space-y-1">
           <a href="#" className="flex items-center gap-3 p-3 hover:text-white transition">
             <i className="fa-solid fa-table-cells-large text-sm w-5 text-center"></i>
