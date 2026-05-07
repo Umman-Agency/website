@@ -21,7 +21,7 @@ function Login() {
   return (
     <>
       <aside className="lg:float-left max-w-1/4 h-screen bg-black py-6 px-8">
-        <Link href="/welcome" className="text-2xl font-bold text-white tracking-wider">
+        <Link href="/" className="text-2xl font-bold text-white tracking-wider">
           <img src="assets/logo_umman.png" alt="Logo de Umman" className="h-auto w-auto" /> {/* Changed h-10 to h-5 */}
         </Link>
 
