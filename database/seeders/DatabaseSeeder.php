@@ -14,22 +14,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         if(!env('ADMIN_EMAIL')){
           // Not seeding
           return;
         }
 
-        User::updateOrCreate([
-          'name' => env('ADMIN_NAME'),
-          'email' => env('ADMIN_EMAIL'),
-          'password' => Hash::makeenv('ADMIN_PASSWORD'),
-        ]);
+        try {
+            User::factory(10)->create();
+
+            User::factory()->create([
+              'name' => env('ADMIN_NAME'),
+              'email' => env('ADMIN_EMAIL'),
+              'password' => Hash::make(env('ADMIN_PASSWORD')),
+             ]);
+        }
+        catch (exception){
+            echo "Problems seeding with this username";
+            echo "${env('ADMIN_NAME')}";
+        }
     }
 }
